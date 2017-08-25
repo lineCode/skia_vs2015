@@ -1,0 +1,68 @@
+1.下载安装python和git
+2.安装depot_tools
+	git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+	export PATH="${PWD}/depot_tools:/c/Python27:${PATH}"
+3.下载skia
+	git clone https://skia.googlesource.com/skia.git
+	cd skia
+	python tools/git-sync-deps
+4.ninja编译
+	gn gen ninja/x64_Static_Debug --args="is_debug=true skia_use_egl=true skia_use_angle=true" --ide=vs --sln=skia
+		
+5.vs2015编译
+	需要修改:
+	gn gen vs2015/x64_Shared_Release --args="is_component_build=true skia_use_egl=true skia_use_angle=true" --ide=vs --sln=skia
+	
+ninja编译问题：
+1.FAILED: gen/angle2/id/commit.h
+	解决方法：修改skia\third_party\angle2\BUILD.gn
+2.无法打开包括文件: “id/commit.h”: No such file or directory
+	解决方法: 修改skia\third_party\externals\angle2\src\common\version.h
+3.gpu找不到egl头
+	修改gpu.ninja include_dirs增加-I../../third_party/externals/angle2/include
+	修改gpu.vcxproj <AdditionalIncludeDirectories>增加../../third_party/externals/angle2/include;
+4.createplatformgltestcontext_egl.cpp(225): warning C4312: “reinterpret_cast”: 从“GrGLuint”转换到更大的“GrEGLClientBuffer”
+	修改gpu_tool_utils.ninja  cflags增加/wd4312
+	修改gpu_tool_utils.vcxproj  DisableSpecificWarnings增加4312
+5.fatal error LNK1181: 无法打开输入文件“EGL.obj”
+	修改SampleApp.ninja libs增加libEGL.dll.lib	
+	defines = -DDEFAULT_TO_ANGLE
+	libs = FontSub.lib Ole32.lib OleAut32.lib User32.lib libEGL.dll.lib OpenGL32.lib kernel32.lib gdi32.lib
+	
+	
+vs2015编译问题：
+	libEGL : ../../../../../third_party/externals/angle2/src/libEGL/libEGL.def
+	libGLESv2: d3d9.lib	 ../../../../../third_party/externals/angle2/src/libGLESv2/libGLESv2.def
+	libEGL: libGLESv2.lib $(OutDir)
+	spirv-tools: 拷贝有.inc的spirv-tools文件夹到当前sln所在目录， 并且添加包含目录../../../spirv-tools
+				 skia\third_party\externals\spirv-tools\source\val\*_val.cpp
+				 skia\third_party\externals\spirv-tools\source\opt\*_opt.cpp
+				 
+	skia:
+		SkJumper_generated_win.S文件 项类型改为‘自定义生成工具’
+			命令行： ml64 /c "..\..\..\src\jumper\SkJumper_generated_win.S"
+			输出: %(fileName).obj
+		链接库: avx.lib
+				effects.lib
+				gpu.lib
+				jpeg.lib
+				png.lib
+				sse2.lib
+				sse41.lib
+				sse42.lib
+				ssse3.lib
+				webp.lib
+				libjpeg.lib
+				libpng.lib
+				libwebp.lib
+				libwebp_avx2.lib
+				libwebp_sse41.lib
+				zlib.lib
+				zlib_x86.lib
+				spirv-tools.lib
+				libEGL.lib
+				Usp10.lib
+				FontSub.lib
+				OpenGL32.lib	
+		Remove掉SkDocument.cpp SkMultiPictureDocument.cpp SkXPSDocument.cpp SkXPSDevice.cpp
+				
