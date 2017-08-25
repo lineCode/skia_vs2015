@@ -39,7 +39,7 @@ declare_args() {
   skia_enable_flutter_defines = false
   skia_enable_gpu = true
   skia_enable_pdf = false
-  skia_enable_spirv_validation = is_skia_dev_build && is_debug
+  skia_enable_spirv_validation = false
   skia_enable_tools = is_skia_dev_build
   skia_enable_vulkan_debug_layers = is_skia_dev_build && is_debug
   skia_vulkan_sdk = getenv("VULKAN_SDK")
@@ -469,9 +469,7 @@ if (skia_compile_processors) {
 
 optional("gpu") {
   enabled = skia_enable_gpu
-  deps = [
-    ":compile_processors",
-  ]
+  deps = []
   if (skia_use_angle) {
     deps += [ "//third_party/angle2" ]
   }
@@ -628,21 +626,11 @@ component("skia") {
   configs += skia_library_configs
 
   deps = [
-    ":arm64",
-    ":armv7",
     ":avx",
-    ":crc32",
     ":effects",
-    ":fontmgr_android",
-    ":fontmgr_custom",
-    ":fontmgr_fontconfig",
-    ":fontmgr_fuchsia",
     ":gpu",
-    ":heif",
     ":jpeg",
-    ":none",
     ":png",
-    ":raw",
     ":sse2",
     ":sse41",
     ":sse42",

@@ -13,6 +13,8 @@
 	需要修改:
 	gn gen vs2015/x64_Shared_Release --args="is_component_build=true skia_use_egl=true skia_use_angle=true" --ide=vs --sln=skia
 	
+	gn gen vs2015/win32_Shared_Release --args="target_cpu=\"x86\" is_component_build=true skia_use_egl=true skia_use_angle=true" --ide=vs --sln=skia
+	
 ninja编译问题：
 1.FAILED: gen/angle2/id/commit.h
 	解决方法：修改skia\third_party\angle2\BUILD.gn
@@ -65,4 +67,16 @@ vs2015编译问题：
 				FontSub.lib
 				OpenGL32.lib	
 		Remove掉SkDocument.cpp SkMultiPictureDocument.cpp SkXPSDocument.cpp SkXPSDevice.cpp
+	
+	
+vs2015编译问题(win32)：		
+	skia:
+		SkJumper_generated_win.S文件 项类型改为‘自定义生成工具’
+			命令行： ml /c "..\..\..\src\jumper\SkJumper_generated_win.S"
+			输出: %(fileName).obj	
+			error LNK2026: 模块对于 SAFESEH 映像是不安全的。
+				解决方法：1.打开该项目的“属性页”对话框。2.单击“链接器”文件夹。3.单击“命令行”属性页。4.将 /SAFESEH:NO 键入“附加选项”框中，然后点击应用。
+				
+				
+				
 				
