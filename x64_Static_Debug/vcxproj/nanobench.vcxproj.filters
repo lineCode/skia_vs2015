@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="bench">
+      <UniqueIdentifier>{B3060449-0AB2-B34E-9A8A-17D42A749FD8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="../../../bench/nanobench.cpp">
+      <Filter>bench</Filter>
+    </ClCompile>
+</ItemGroup>
+</Project>

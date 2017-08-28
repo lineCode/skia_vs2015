@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="tools\viewer">
+      <UniqueIdentifier>{3D0CDE21-A849-3976-FD6C-BBDDED85F4EF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{0E9715BA-57B3-F23F-1EED-56699DC72D4B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\viewer\sk_app">
+      <UniqueIdentifier>{A882CFCE-DFC1-4C8C-9BB8-B9CE8D2303FF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\viewer\sk_app\win">
+      <UniqueIdentifier>{813BA281-75B1-3130-D45E-1674DFACD424}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="../../../tools/viewer/GMSlide.cpp">
+      <Filter>tools\viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/ImageSlide.cpp">
+      <Filter>tools\viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/SKPSlide.cpp">
+      <Filter>tools\viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/SampleSlide.cpp">
+      <Filter>tools\viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/Viewer.cpp">
+      <Filter>tools\viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/sk_app/CommandSet.cpp">
+      <Filter>tools\viewer\sk_app</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/sk_app/GLWindowContext.cpp">
+      <Filter>tools\viewer\sk_app</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/sk_app/Window.cpp">
+      <Filter>tools\viewer\sk_app</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/sk_app/win/GLWindowContext_win.cpp">
+      <Filter>tools\viewer\sk_app\win</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/sk_app/win/RasterWindowContext_win.cpp">
+      <Filter>tools\viewer\sk_app\win</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/sk_app/win/Window_win.cpp">
+      <Filter>tools\viewer\sk_app\win</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/sk_app/win/main_win.cpp">
+      <Filter>tools\viewer\sk_app\win</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../tools/viewer/sk_app/win/ANGLEWindowContext_win.cpp">
+      <Filter>tools\viewer\sk_app\win</Filter>
+    </ClCompile>
+</ItemGroup>
+</Project>

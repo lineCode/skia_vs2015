@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="dm">
+      <UniqueIdentifier>{D411396D-9C39-DDEE-AA29-B20396A7E749}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="../../../dm/DM.cpp">
+      <Filter>dm</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../dm/DMJsonWriter.cpp">
+      <Filter>dm</Filter>
+    </ClCompile>
+    <ClCompile Include="../../../dm/DMSrcSink.cpp">
+      <Filter>dm</Filter>
+    </ClCompile>
+</ItemGroup>
+</Project>

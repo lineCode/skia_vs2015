@@ -15,6 +15,8 @@
 	
 	gn gen vs2015/win32_Shared_Release --args="target_cpu=\"x86\" is_component_build=true skia_use_egl=true skia_use_angle=true" --ide=vs --sln=skia
 	
+	gn gen vs2015/x64_Static_Debug --args="is_debug=true skia_use_egl=true skia_use_angle=true" --ide=vs --sln=skia
+	
 ninja编译问题：
 1.FAILED: gen/angle2/id/commit.h
 	解决方法：修改skia\third_party\angle2\BUILD.gn
