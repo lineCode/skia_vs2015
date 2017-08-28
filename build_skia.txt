@@ -78,5 +78,18 @@ vs2015编译问题(win32)：
 				解决方法：1.打开该项目的“属性页”对话框。2.单击“链接器”文件夹。3.单击“命令行”属性页。4.将 /SAFESEH:NO 键入“附加选项”框中，然后点击应用。
 				
 				
+demos:
+	include : ..\..\..\include;..\..\..\include\config;..\..\..\include\codec;..\..\..\include\core;..\..\..\include\effects;..\..\..\include\encode;..\..\..\include\gpu;..\..\..\include\pathops;..\..\..\include\ports;..\..\..\include\private;..\..\..\include\utils;..\..\..\include\extention_dll;..\..\..\include\extention_dll\win;..\..\..\third_party\externals\angle2\include;
+	_CRT_SECURE_NO_WARNINGS
+	_HAS_EXCEPTIONS=0
+	WIN32_LEAN_AND_MEAN
+	NOMINMAX
+	SKIA_DLL
+	SK_GAMMA_APPLY_TO_A8
+	SK_ANGLE
+	GR_TEST_UTILS=1					
+	
+	lib:skia.lib;libEGL.lib;libGLESv2.lib;Opengl32.lib;
+				
 				
 				

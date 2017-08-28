@@ -82,6 +82,12 @@
     <Filter Include="third_party">
       <UniqueIdentifier>{363093B2-8BE6-B8D4-ADFC-148BB4039B6A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\extension_dll">
+      <UniqueIdentifier>{726040fd-36d4-4c39-bada-556fdf4b7f50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\extension_dll\win">
+      <UniqueIdentifier>{877462d5-c56c-409a-adb2-dbfb54184974}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="../../../src/c/sk_paint.cpp">
@@ -1914,8 +1920,16 @@
     <ClCompile Include="../../../src/ports/SkFontMgr_win_dw_factory.cpp">
       <Filter>src\ports</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\extention_dll\win\GLContext_angle.cpp">
+      <Filter>src\extension_dll\win</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="../../../src/core/SkTDPQueue.h" />
+    <ClInclude Include="../../../src/core/SkTDPQueue.h" />
+    <ClInclude Include="..\..\..\src\extention_dll\win\GLContext_angle.h">
+      <Filter>src\extension_dll\win</Filter>
+    </ClInclude>
     <ClInclude Include="../../../src/core/SkTDPQueue.h" />
   </ItemGroup>
   <ItemGroup>

@@ -471,7 +471,9 @@
     <ClCompile Include="../../../src/gpu/gl/GrGLBuffer.cpp" />
     <ClCompile Include="../../../src/gpu/gl/GrGLCaps.cpp" />
     <ClCompile Include="../../../src/gpu/gl/GrGLContext.cpp" />
-    <ClCompile Include="../../../src/gpu/gl/GrGLCreateNullInterface.cpp" />
+    <ClCompile Include="../../../src/gpu/gl/GrGLCreateNullInterface.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="../../../src/gpu/gl/GrGLGLSL.cpp" />
     <ClCompile Include="../../../src/gpu/gl/GrGLGpu.cpp" />
     <ClCompile Include="../../../src/gpu/gl/GrGLGpuProgramCache.cpp" />
@@ -485,7 +487,9 @@
     <ClCompile Include="../../../src/gpu/gl/GrGLRenderTarget.cpp" />
     <ClCompile Include="../../../src/gpu/gl/GrGLSemaphore.cpp" />
     <ClCompile Include="../../../src/gpu/gl/GrGLStencilAttachment.cpp" />
-    <ClCompile Include="../../../src/gpu/gl/GrGLTestInterface.cpp" />
+    <ClCompile Include="../../../src/gpu/gl/GrGLTestInterface.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="../../../src/gpu/gl/GrGLTexture.cpp" />
     <ClCompile Include="../../../src/gpu/gl/GrGLTextureRenderTarget.cpp" />
     <ClCompile Include="../../../src/gpu/gl/GrGLUtil.cpp" />
