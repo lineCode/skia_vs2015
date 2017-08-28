@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/Tools/MSVC/14.10.25017/include;C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include;Windows Kits/10/Include/10.0.14393.0/shared;Windows Kits/10/Include/10.0.14393.0/ucrt;Windows Kits/10/Include/10.0.14393.0/um;Windows Kits/10/Include/10.0.14393.0/winrt;C:/Program Files (x86)/Windows Kits/8.1/Include/shared;C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt;C:/Program Files (x86)/Windows Kits/8.1/Include/um;C:/Program Files (x86)/Windows Kits/8.1/Include/winrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/shared;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/ucrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/um;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/winrt;../../../include/android;../../../include/c;../../../include/codec;../../../include/config;../../../include/core;../../../include/effects;../../../include/encode;../../../include/gpu;../../../include/gpu/gl;../../../include/pathops;../../../include/ports;../../../include/svg;../../../include/utils;../../../include/utils/mac;../../../include/private;../../../src/c;../../../src/codec;../../../src/core;../../../src/effects;../../../src/fonts;../../../src/image;../../../src/images;../../../src/lazy;../../../src/opts;../../../src/pathops;../../../src/pdf;../../../src/ports;../../../src/sfnt;../../../src/shaders;../../../src/shaders/gradients;../../../src/sksl;../../../src/utils;../../../src/utils/win;../../../src/xml;../../../third_party/gif;../../../src/gpu;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\winrt;$(VSInstallDir)\VC\atlmfc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../include/c;../../../include/codec;../../../include/config;../../../include/core;../../../include/effects;../../../include/encode;../../../include/gpu;../../../include/gpu/gl;../../../include/pathops;../../../include/ports;../../../include/svg;../../../include/utils;../../../include/utils/mac;../../../include/private;../../../src/c;../../../src/codec;../../../src/core;../../../src/effects;../../../src/fonts;../../../src/image;../../../src/images;../../../src/lazy;../../../src/opts;../../../src/pathops;../../../src/pdf;../../../src/ports;../../../src/sfnt;../../../src/shaders;../../../src/shaders/gradients;../../../src/sksl;../../../src/utils;../../../src/utils/win;../../../src/xml;../../../third_party/gif;../../../src/gpu;../../../third_party/externals/angle2/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS /bigobj /utf-8 /GR- /Zi %(AdditionalOptions)</AdditionalOptions>
       <CompileAsWinRT>false</CompileAsWinRT>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -54,6 +54,10 @@
       <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">$(OutDir)</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">avx.lib;effects.lib;gpu.lib;jpeg.lib;png.lib;sse2.lib;sse41.lib;sse42.lib;ssse3.lib;webp.lib;libjpeg.lib;libpng.lib;libwebp.lib;libwebp_avx2.lib;libwebp_sse41.lib;zlib.lib;zlib_x86.lib;libEGL.lib;Usp10.lib;FontSub.lib;OpenGL32.lib	;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">copy ..\..\..\src\utils\win\SkWGL.h ..\..\..\include\extention_dll\win\  /y
+copy ..\..\..\src\extention_dll\win\GLContext_angle.h ..\..\..\include\extention_dll\win\  /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="../../../src/c/sk_types_priv.h" />
@@ -347,6 +351,7 @@
     <ClInclude Include="../../../src/fonts/SkTestScalerContext.h" />
     <ClInclude Include="../../../src/xps/SkXPSDocument.h" />
     <ClInclude Include="../../../src/xps/SkXPSDevice.h" />
+    <ClInclude Include="..\..\..\src\extention_dll\win\GLContext_angle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="../../../src/c/sk_paint.cpp" />
@@ -590,6 +595,7 @@
     <ClCompile Include="../../../src/pathops/SkReduceOrder.cpp" />
     <ClCompile Include="../../../src/jumper/SkJumper.cpp" />
     <ClCompile Include="../../../src/jumper/SkJumper_stages.cpp" />
+    <ClCompile Include="..\..\..\src\extention_dll\win\GLContext_angle.cpp" />
     <CustomBuild Include="../../../src/jumper/SkJumper_generated_win.S">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">ml /c "..\..\..\src\jumper\SkJumper_generated_win.S"</Command>
@@ -633,9 +639,15 @@
     <ClCompile Include="../../../src/utils/win/SkWGL_win.cpp" />
     <ClCompile Include="../../../src/fonts/SkRandomScalerContext.cpp" />
     <ClCompile Include="../../../src/fonts/SkTestScalerContext.cpp" />
-    <ClCompile Include="../../../src/android/SkAndroidFrameworkUtils.cpp" />
-    <ClCompile Include="../../../src/android/SkBitmapRegionCodec.cpp" />
-    <ClCompile Include="../../../src/android/SkBitmapRegionDecoder.cpp" />
+    <ClCompile Include="../../../src/android/SkAndroidFrameworkUtils.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="../../../src/android/SkBitmapRegionCodec.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="../../../src/android/SkBitmapRegionDecoder.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="../../../src/codec/SkAndroidCodec.cpp" />
     <ClCompile Include="../../../src/codec/SkBmpBaseCodec.cpp" />
     <ClCompile Include="../../../src/codec/SkBmpCodec.cpp" />
