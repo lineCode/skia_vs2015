@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="GN|Win32">
+      <Configuration>GN</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F0854D6F-BF32-45BB-A1DD-BF163257190B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>skia_demo_sync</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GN|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>../../../vs2015/win32_Shared_Release/</OutDir>
+    <IntDir>$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;SKIA_DLL;SK_GAMMA_APPLY_TO_A8;SK_ANGLE;GR_TEST_UTILS=1			;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\include\config;..\..\..\include\codec;..\..\..\include\core;..\..\..\include\effects;..\..\..\include\encode;..\..\..\include\gpu;..\..\..\include\pathops;..\..\..\include\ports;..\..\..\include\private;..\..\..\include\utils;..\..\..\include\extention_dll;..\..\..\include\extention_dll\win;..\..\..\third_party\externals\angle2\include;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>skia.lib;libEGL.lib;libGLESv2.lib;Opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\demos\skia_demo\FrameWindowWnd.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\SkiaTest.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\skia_demo.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\skwin\DefaultDeviceManager.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\skwin\LyraWindow.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\skwin\SkWindow.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\skwin\win\SkOSWindow_win.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\WindowWnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\demos\skia_demo\FrameWindowWnd.h" />
+    <ClInclude Include="..\..\demos\skia_demo\SkiaTest.h" />
+    <ClInclude Include="..\..\demos\skia_demo\skia_demo.h" />
+    <ClInclude Include="..\..\demos\skia_demo\skwin\DefaultDeviceManager.h" />
+    <ClInclude Include="..\..\demos\skia_demo\skwin\DeviceManager.h" />
+    <ClInclude Include="..\..\demos\skia_demo\skwin\LyraWindow.h" />
+    <ClInclude Include="..\..\demos\skia_demo\skwin\SkWindow.h" />
+    <ClInclude Include="..\..\demos\skia_demo\skwin\win\SkOSWindow_Win.h" />
+    <ClInclude Include="..\..\demos\skia_demo\WindowWnd.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
