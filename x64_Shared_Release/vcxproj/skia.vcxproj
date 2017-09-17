@@ -638,9 +638,15 @@ copy ..\..\..\src\extention_dll\win\GLContext_angle.h ..\..\..\include\extention
     <ClCompile Include="../../../src/utils/win/SkWGL_win.cpp" />
     <ClCompile Include="../../../src/fonts/SkRandomScalerContext.cpp" />
     <ClCompile Include="../../../src/fonts/SkTestScalerContext.cpp" />
-    <ClCompile Include="../../../src/android/SkAndroidFrameworkUtils.cpp" />
-    <ClCompile Include="../../../src/android/SkBitmapRegionCodec.cpp" />
-    <ClCompile Include="../../../src/android/SkBitmapRegionDecoder.cpp" />
+    <ClCompile Include="../../../src/android/SkAndroidFrameworkUtils.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="../../../src/android/SkBitmapRegionCodec.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="../../../src/android/SkBitmapRegionDecoder.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="../../../src/codec/SkAndroidCodec.cpp" />
     <ClCompile Include="../../../src/codec/SkBmpBaseCodec.cpp" />
     <ClCompile Include="../../../src/codec/SkBmpCodec.cpp" />

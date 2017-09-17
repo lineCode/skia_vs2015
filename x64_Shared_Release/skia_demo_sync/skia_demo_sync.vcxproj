@@ -53,7 +53,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\demos\skia_demo\AnimatedGif.cpp" />
     <ClCompile Include="..\..\demos\skia_demo\FrameWindowWnd.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\LeftChildWindowWnd.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\RightChildWindowWnd.cpp" />
     <ClCompile Include="..\..\demos\skia_demo\SkiaTest.cpp" />
     <ClCompile Include="..\..\demos\skia_demo\skia_demo.cpp" />
     <ClCompile Include="..\..\demos\skia_demo\skwin\DefaultDeviceManager.cpp" />
@@ -63,7 +66,10 @@
     <ClCompile Include="..\..\demos\skia_demo\WindowWnd.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\demos\skia_demo\AnimatedGif.h" />
     <ClInclude Include="..\..\demos\skia_demo\FrameWindowWnd.h" />
+    <ClInclude Include="..\..\demos\skia_demo\LeftChildWindowWnd.h" />
+    <ClInclude Include="..\..\demos\skia_demo\RightChildWindowWnd.h" />
     <ClInclude Include="..\..\demos\skia_demo\SkiaTest.h" />
     <ClInclude Include="..\..\demos\skia_demo\skia_demo.h" />
     <ClInclude Include="..\..\demos\skia_demo\skwin\DefaultDeviceManager.h" />

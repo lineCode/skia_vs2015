@@ -45,6 +45,15 @@
     <ClCompile Include="..\..\demos\skia_demo\skwin\win\SkOSWindow_win.cpp">
       <Filter>skwin\win</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\demos\skia_demo\AnimatedGif.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\demos\skia_demo\LeftChildWindowWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\demos\skia_demo\RightChildWindowWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\demos\skia_demo\skwin\DefaultDeviceManager.h">
@@ -72,6 +81,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\demos\skia_demo\WindowWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\demos\skia_demo\AnimatedGif.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\demos\skia_demo\LeftChildWindowWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\demos\skia_demo\RightChildWindowWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
