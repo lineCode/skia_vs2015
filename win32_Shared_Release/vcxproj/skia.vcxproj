@@ -12,6 +12,7 @@
     <RootNamespace>skia</RootNamespace>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
@@ -19,7 +20,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Locals">
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
@@ -44,15 +45,17 @@
       <ExceptionHandling>false</ExceptionHandling>
       <MinimalRebuild>false</MinimalRebuild>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;SKIA_DLL;SK_GAMMA_APPLY_TO_A8;SK_ANGLE;SK_ENABLE_DISCRETE_GPU;GR_TEST_UTILS=1;SKIA_IMPLEMENTATION=1;SK_HAS_JPEG_LIBRARY;SK_HAS_PNG_LIBRARY;SK_HAS_WEBP_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;SKIA_DLL;SK_GAMMA_APPLY_TO_A8;SK_ANGLE;SK_ENABLE_DISCRETE_GPU;GR_TEST_UTILS=1;SKIA_IMPLEMENTATION=1;SK_HAS_JPEG_LIBRARY;SK_HAS_PNG_LIBRARY;SK_HAS_WEBP_LIBRARY;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
       <WarningLevel>Level3</WarningLevel>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">Disabled</Optimization>
     </ClCompile>
     <Link />
     <Link>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">$(OutDir)</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">avx.lib;effects.lib;gpu.lib;jpeg.lib;png.lib;sse2.lib;sse41.lib;sse42.lib;ssse3.lib;webp.lib;libjpeg.lib;libpng.lib;libwebp.lib;libwebp_avx2.lib;libwebp_sse41.lib;zlib.lib;zlib_x86.lib;libEGL.lib;Usp10.lib;FontSub.lib;OpenGL32.lib	;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">Windows</SubSystem>
     </Link>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">copy ..\..\..\src\utils\win\SkWGL.h ..\..\..\include\extention_dll\win\  /y
@@ -596,6 +599,7 @@ copy ..\..\..\src\extention_dll\win\GLContext_angle.h ..\..\..\include\extention
     <ClCompile Include="../../../src/jumper/SkJumper.cpp" />
     <ClCompile Include="../../../src/jumper/SkJumper_stages.cpp" />
     <ClCompile Include="..\..\..\src\extention_dll\win\GLContext_angle.cpp" />
+    <ClCompile Include="..\..\..\src\ports\SkFontMgr_win_gdi_factory.cpp" />
     <CustomBuild Include="../../../src/jumper/SkJumper_generated_win.S">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">ml /c "..\..\..\src\jumper\SkJumper_generated_win.S"</Command>
@@ -676,15 +680,23 @@ copy ..\..\..\src\extention_dll\win\GLContext_angle.h ..\..\..\include\extention
     <ClCompile Include="../../../src/fonts/SkFontMgr_indirect.cpp" />
     <ClCompile Include="../../../src/ports/SkDebug_win.cpp" />
     <ClCompile Include="../../../src/ports/SkFontHost_win.cpp" />
-    <ClCompile Include="../../../src/ports/SkFontMgr_win_dw.cpp" />
+    <ClCompile Include="../../../src/ports/SkFontMgr_win_dw.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="../../../src/ports/SkImageEncoder_WIC.cpp" />
     <ClCompile Include="../../../src/ports/SkImageGeneratorWIC.cpp" />
     <ClCompile Include="../../../src/ports/SkOSFile_win.cpp" />
     <ClCompile Include="../../../src/ports/SkOSLibrary_win.cpp" />
-    <ClCompile Include="../../../src/ports/SkScalerContext_win_dw.cpp" />
+    <ClCompile Include="../../../src/ports/SkScalerContext_win_dw.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="../../../src/ports/SkTLS_win.cpp" />
-    <ClCompile Include="../../../src/ports/SkTypeface_win_dw.cpp" />
-    <ClCompile Include="../../../src/ports/SkFontMgr_win_dw_factory.cpp" />
+    <ClCompile Include="../../../src/ports/SkTypeface_win_dw.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="../../../src/ports/SkFontMgr_win_dw_factory.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />

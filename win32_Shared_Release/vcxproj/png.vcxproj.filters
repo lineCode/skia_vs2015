@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <ItemGroup>
     <Filter Include="src\codec">
@@ -15,11 +15,34 @@
     <ClCompile Include="../../../src/codec/SkIcoCodec.cpp">
       <Filter>src\codec</Filter>
     </ClCompile>
-    <ClCompile Include="../../../src/codec/SkPngCodec.cpp">
-      <Filter>src\codec</Filter>
-    </ClCompile>
     <ClCompile Include="../../../src/images/SkPngEncoder.cpp">
       <Filter>src\images</Filter>
     </ClCompile>
-</ItemGroup>
+    <ClCompile Include="..\..\..\src\codec\SkPngCodec.cpp">
+      <Filter>src\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\codec\SkAPngCodec.cpp">
+      <Filter>src\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\codec\SkAPngReader.cpp">
+      <Filter>src\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\codec\SkAPngFrameDecoder.cpp">
+      <Filter>src\codec</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\codec\SkPngCodec.h">
+      <Filter>src\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\codec\SkAPngCodec.h">
+      <Filter>src\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\codec\SkAPngReader.h">
+      <Filter>src\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\codec\SkAPngFrameDecoder.h">
+      <Filter>src\codec</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

@@ -16,7 +16,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GN|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -39,7 +39,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;SKIA_DLL;SK_GAMMA_APPLY_TO_A8;SK_ANGLE;GR_TEST_UTILS=1			;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;SKIA_DLL;SK_GAMMA_APPLY_TO_A8;SK_ANGLE;GR_TEST_UTILS=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\..\..\include;..\..\..\include\config;..\..\..\include\codec;..\..\..\include\core;..\..\..\include\effects;..\..\..\include\encode;..\..\..\include\gpu;..\..\..\include\pathops;..\..\..\include\ports;..\..\..\include\private;..\..\..\include\utils;..\..\..\include\extention_dll;..\..\..\include\extention_dll\win;..\..\..\third_party\externals\angle2\include;</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4251</DisableSpecificWarnings>
@@ -53,7 +53,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\demos\skia_demo\AnimatedGif.cpp" />
     <ClCompile Include="..\..\demos\skia_demo\FrameWindowWnd.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\LeftChildWindowWnd.cpp" />
+    <ClCompile Include="..\..\demos\skia_demo\RightChildWindowWnd.cpp" />
     <ClCompile Include="..\..\demos\skia_demo\SkiaTest.cpp" />
     <ClCompile Include="..\..\demos\skia_demo\skia_demo.cpp" />
     <ClCompile Include="..\..\demos\skia_demo\skwin\DefaultDeviceManager.cpp" />
@@ -63,7 +66,10 @@
     <ClCompile Include="..\..\demos\skia_demo\WindowWnd.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\demos\skia_demo\AnimatedGif.h" />
     <ClInclude Include="..\..\demos\skia_demo\FrameWindowWnd.h" />
+    <ClInclude Include="..\..\demos\skia_demo\LeftChildWindowWnd.h" />
+    <ClInclude Include="..\..\demos\skia_demo\RightChildWindowWnd.h" />
     <ClInclude Include="..\..\demos\skia_demo\SkiaTest.h" />
     <ClInclude Include="..\..\demos\skia_demo\skia_demo.h" />
     <ClInclude Include="..\..\demos\skia_demo\skwin\DefaultDeviceManager.h" />

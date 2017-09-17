@@ -12,6 +12,7 @@
     <RootNamespace>libGLESv2</RootNamespace>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
@@ -19,7 +20,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Locals">
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
@@ -43,13 +44,14 @@
       <ExceptionHandling>false</ExceptionHandling>
       <MinimalRebuild>false</MinimalRebuild>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>LIBANGLE_IMPLEMENTATION;LIBGLESV2_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;ANGLE_ENABLE_ESSL;ANGLE_ENABLE_GLSL;ANGLE_ENABLE_HLSL;ANGLE_ENABLE_OPENGL;EGL_EGLEXT_PROTOTYPES;GL_GLEXT_PROTOTYPES;ANGLE_ENABLE_D3D11;ANGLE_ENABLE_D3D9;GL_APICALL=;EGLAPI=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LIBANGLE_IMPLEMENTATION;LIBGLESV2_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;ANGLE_ENABLE_ESSL;ANGLE_ENABLE_GLSL;ANGLE_ENABLE_HLSL;ANGLE_ENABLE_OPENGL;EGL_EGLEXT_PROTOTYPES;GL_GLEXT_PROTOTYPES;ANGLE_ENABLE_D3D11;ANGLE_ENABLE_D3D9;GL_APICALL=;EGLAPI=;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link />
     <Link>
       <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">../../../../../third_party/externals/angle2/src/libGLESv2/libGLESv2.def</ModuleDefinitionFile>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">d3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -831,10 +833,14 @@
     <ClCompile Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/VertexBuffer11.cpp" />
     <ClCompile Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/win32/NativeWindow11Win32.cpp" />
     <ClCompile Include="../../../../../third_party/externals/angle2/src/third_party/systeminfo/SystemInfo.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\common\debug_common.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\compiler\translator\Compiler_translator.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\libANGLE\Compiler_libANGLE.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\libANGLE\Debug_libANGLE.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\common\debug.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\compiler\translator\Compiler.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\libANGLE\Compiler.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">$(IntDir)Compiler_libANGLE.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\libANGLE\Debug.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">$(IntDir)Debug_libANGLE.obj</ObjectFileName>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />

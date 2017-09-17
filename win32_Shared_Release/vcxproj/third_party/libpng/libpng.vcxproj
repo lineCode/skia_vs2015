@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="14.0">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="GN|Win32">
@@ -12,28 +12,29 @@
     <RootNamespace>libpng</RootNamespace>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
     <CharacterSet>Unicode</CharacterSet>
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Locals">
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
-  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
-  <ImportGroup Label="ExtensionSettings"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <OutDir>../../../../../vs2015/win32_Shared_Release/</OutDir>
     <TargetName>$(ProjectName)</TargetName>
     <TargetPath>$(OutDir)\$(ProjectName)$(TargetExt)</TargetPath>
-  <IntDir>$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
-</PropertyGroup>
+    <IntDir>$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/Tools/MSVC/14.10.25017/include;C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include;Windows Kits/10/Include/10.0.14393.0/shared;Windows Kits/10/Include/10.0.14393.0/ucrt;Windows Kits/10/Include/10.0.14393.0/um;Windows Kits/10/Include/10.0.14393.0/winrt;C:/Program Files (x86)/Windows Kits/8.1/Include/shared;C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt;C:/Program Files (x86)/Windows Kits/8.1/Include/um;C:/Program Files (x86)/Windows Kits/8.1/Include/winrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/shared;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/ucrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/um;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/winrt;../../../../../third_party/libpng;../../../../../third_party/externals/zlib;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\winrt;$(VSInstallDir)\VC\atlmfc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -45,32 +46,30 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PreprocessorDefinitions>PNG_INTEL_SSE;_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='GN|Win32'">Disabled</Optimization>
     </ClCompile>
-    <Link/>
+    <Link />
   </ItemDefinitionGroup>
-  
   <ItemGroup>
-    <ClCompile Include="../../../../../third_party/libpng/png.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngerror.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngget.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngmem.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngpread.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngread.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngrio.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngrtran.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngrutil.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngset.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngtrans.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngwio.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngwrite.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngwtran.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/pngwutil.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/contrib/intel/filter_sse2_intrinsics.c"/>
-    <ClCompile Include="../../../../../third_party/libpng/contrib/intel/intel_init.c"/>
+    <ClCompile Include="../../../../../third_party/libpng/png.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngerror.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngget.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngmem.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngpread.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngread.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngrio.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngrtran.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngrutil.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngset.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngtrans.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngwio.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngwrite.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngwtran.c" />
+    <ClCompile Include="../../../../../third_party/libpng/pngwutil.c" />
+    <ClCompile Include="../../../../../third_party/libpng/contrib/intel/filter_sse2_intrinsics.c" />
+    <ClCompile Include="../../../../../third_party/libpng/contrib/intel/intel_init.c" />
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
-  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
-  <ImportGroup Label="ExtensionTargets"/>
-  
-  
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

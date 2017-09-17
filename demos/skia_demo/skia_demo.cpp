@@ -21,7 +21,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	CFrameWindowWnd* pFrame = new CFrameWindowWnd();
 	if( pFrame == NULL ) return 0;
 	pFrame->Create(NULL, TEXT("skia_demo : "), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
-	frame = pFrame;
+
 
 	CWindowWnd::MessageLoop();
 

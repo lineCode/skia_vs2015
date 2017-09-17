@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include "SkiaTest.h"
+#include "AnimatedGif.h"
 
 // start : ignore skia dll warnings
 #pragma warning( push )  
@@ -18,6 +19,8 @@
 #include "SkDashPathEffect.h"
 #include "SkDiscretePathEffect.h"
 #include "SkTime.h"
+
+#include "SkTypeface.h"
 
 #include "SkBitmap.h"
 #include "SkCodec.h"
@@ -458,100 +461,60 @@ bool TestDrawSumPathEffect(SkCanvas* canvas) {
 
 	return false;
 }
-//class AnimGif {
-//	SkMovie*    fMovie;
-//public:
-//	AnimGif() {
-//		fMovie = SkMovie::DecodeFile("welcome2.gif");
-//	}
-//
-//	virtual ~AnimGif() {
-//		SkSafeUnref(fMovie);
-//	}
-//
-//public:
-//
-//	void drawBG(SkCanvas* canvas) {
-//		canvas->drawColor(0xFFDDDDDD);
-//	}
-//
-//	void onDraw(SkCanvas* canvas) {
-//		this->drawBG(canvas);
-//
-//		if (fMovie) {
-//			if (fMovie->duration()) {
-//				fMovie->setTime(SkTime::GetMSecs() % fMovie->duration());
-//			}
-//			else {
-//				fMovie->setTime(0);
-//			}
-//
-//			if (false)
-//			{
-//				SkBitmap bmp;
-//				bmp.allocN32Pixels(fMovie->bitmap().width(), fMovie->bitmap().height());
-//				fMovie->bitmap().copyTo(&bmp);
-//
-//				SkCanvas* tmpcanvas = new SkCanvas(bmp);
-//				SkPaint paint;
-//				tmpcanvas->drawText("i", 1, 0, 40, paint);
-//
-//				canvas->drawBitmap(bmp, SkIntToScalar(20),
-//					SkIntToScalar(20));
-//				SkSafeRef(tmpcanvas);
-//			}
-//			else {
-//				fMovie->bitmap().notifyPixelsChanged();
-//				canvas->drawBitmap(fMovie->bitmap(), SkIntToScalar(20),
-//					SkIntToScalar(20));
-//			}
-//
-//			{
-//				static int index = 0;
-//
-//				if (false)
-//				{
-//					SkPaint paint;
-//					SkBitmap bmp;
-//					bmp.allocN32Pixels(fMovie->bitmap().width(), fMovie->bitmap().height());
-//					fMovie->bitmap().copyTo(&bmp);
-//					SkCanvas* tmpcanvas = new SkCanvas(bmp);
-//					SkString pngName;
-//					//pngName.appendf("tmp%d.png", index);
-//					pngName.append("i", 1);
-//					//tmpcanvas->drawText(pngName.c_str(), pngName.size(), 0, 40, paint);
-//
-//					canvas->drawBitmap(bmp, SkIntToScalar(20), SkIntToScalar(20));
-//					SkBitmap bm;
-//					bm.allocPixels(canvas->imageInfo());
-//					canvas->readPixels(&bm, 0, 0);
-//
-//
-//					//SkImageEncoder::EncodeFile(pngName.c_str(), bm,SkImageEncoder::kPNG_Type, 0);
-//
-//					SkString pngNameGif;
-//					pngNameGif.appendf("tmpGif%d.png", index++);
-//					//SkImageEncoder::EncodeFile(pngNameGif.c_str(), fMovie->bitmap(),SkImageEncoder::kPNG_Type, 0);
-//				}
-//
-//			}
-//		}
-//	}
-//
-//};
 
 bool TestDrawGif(SkCanvas* canvas) { 
-	//static AnimGif anim;
+	static AnimatedGif anim("Brain_MRI_apng_105px_100ms.png");
 	//
-	//anim.onDraw(canvas);
+	return anim.onDraw(canvas);
 
 	//return true;
-	return false;
+	//return false;
 }
 
+TCHAR s_fontName[64] = TEXT("ËÎÌå");
+TCHAR s_text[64] = TEXT("sjÄãig");
+void win32DrawText(SkCanvas* canvas, int x, int y, int width, int height, int fontHeight);
+bool TestDrawTextTypeFace(SkCanvas* canvas)
+{
+	SkPaint paint;
+	char utf8FontName[64] = { 0 };
+	WideCharToMultiByte(CP_UTF8, 0, s_fontName, lstrlen(s_fontName), utf8FontName, 64, NULL, 0);
+	sk_sp<SkTypeface> typeface = SkTypeface::MakeFromName(utf8FontName, SkFontStyle::Normal());
+	paint.setAntiAlias(true);
+	paint.setTypeface(typeface);
+	int textX = 20;
+	int textY = 100;
+	int textSize = 30;
+	int textWidth = 0;
+	int textHeight = 0;
+	paint.setTextSize(textSize);
+	
+	char text[64] = { 0 };
+	WideCharToMultiByte(CP_UTF8, 0, s_text, lstrlen(s_text), text, 64, NULL, 0);
+	int textLen = strlen(text);
+	SkRect textBound;
+	textWidth = paint.measureText(text, textLen, &textBound);
+	SkPaint::FontMetrics fontMetrics;
+	paint.getFontMetrics(&fontMetrics);
+	textHeight = fontMetrics.fDescent - fontMetrics.fAscent;
+	
+	SkRect rect = SkRect::MakeXYWH(textX, textY, textWidth, textBound.height());
+	SkPaint paintR;
+	paintR.setStyle(SkPaint::kStroke_Style);
+	paintR.setColor(SK_ColorMAGENTA);
+	canvas->drawRect(rect, paintR);
+
+	canvas->drawText(text, textLen, textX, textY + textSize - fontMetrics.fLeading / 2, paint);
+	
+
+	win32DrawText(canvas, textX, textY + textHeight + 10, textWidth, textBound.height(), textHeight);
+	win32DrawText(canvas, textX + textWidth + 10, textY, textWidth, textBound.height(), textHeight);
+	return false;
+}
 DrawFuncPtr ms_arrFuncs[] = 
 {
 	TestDrawGif,
+	TestDrawTextTypeFace,
 	TestDrawSumPathEffect,
 	TestDrawComposePathEffect,
 	TestDrawDiscretePathEffect,
@@ -597,3 +560,124 @@ void CSkiaTest::Draw(SkCanvas *canvas)
 	else
 		frame->KillReDrawTimer();
 }
+
+static HBITMAP CreateHBitmap(int width, int height, bool is_opaque, void** data) {
+	// CreateDIBSection appears to get unhappy if we create an empty bitmap, so
+	// just create a minimal bitmap
+	if ((width == 0) || (height == 0)) {
+		width = 1;
+		height = 1;
+	}
+	BITMAPINFOHEADER hdr = { 0 };
+	hdr.biSize = sizeof(BITMAPINFOHEADER);
+	hdr.biWidth = width;
+	hdr.biHeight = -height;  // minus means top-down bitmap
+	hdr.biPlanes = 1;
+	hdr.biBitCount = 32;
+	hdr.biCompression = BI_RGB;  // no compression
+	hdr.biSizeImage = 0;
+	hdr.biXPelsPerMeter = 1;
+	hdr.biYPelsPerMeter = 1;
+	hdr.biClrUsed = 0;
+	hdr.biClrImportant = 0;
+	HBITMAP hbitmap = CreateDIBSection(NULL, reinterpret_cast<BITMAPINFO*>(&hdr),
+		0, data, NULL, 0);
+
+	return hbitmap;
+}
+static bool InstallHBitmapPixels(SkBitmap* bitmap, int width, int height,
+	bool is_opaque, void* data, HBITMAP hbitmap) {
+	const SkAlphaType at = is_opaque ? kOpaque_SkAlphaType : kPremul_SkAlphaType;
+	const SkImageInfo info = SkImageInfo::MakeN32(width, height, at);
+	const size_t rowBytes = info.minRowBytes();
+
+	return bitmap->installPixels(info, data, rowBytes);
+}
+
+SkBitmap* m_memSkBitmap;
+SkCanvas* m_memCanvas;
+HDC m_hdcMemory;
+HBITMAP m_hbitmapMemory;
+SkBitmap* m_bgBitmap;
+HFONT hFont = NULL;
+void DeleteMemoryDC()
+{
+	if (m_hbitmapMemory)
+		DeleteObject(m_hbitmapMemory);
+	if (m_hdcMemory)
+		DeleteDC(m_hdcMemory);
+	if (m_memCanvas)
+		delete m_memCanvas;
+	if (m_memSkBitmap)
+		delete m_memSkBitmap;
+	m_hbitmapMemory = NULL;
+	m_hdcMemory = NULL;
+	m_memCanvas = NULL;
+	m_memSkBitmap = NULL;
+}
+void CreateMemoryDC(int bmpWidth, int bmpHeight)
+{
+	DeleteMemoryDC();
+	m_hdcMemory = CreateCompatibleDC(nullptr);
+	void* data;
+	m_hbitmapMemory = CreateCompatibleBitmap(m_hdcMemory, bmpWidth, bmpHeight);
+	m_hbitmapMemory = CreateHBitmap(bmpWidth, bmpHeight, true, &data);
+	SelectObject(m_hdcMemory, m_hbitmapMemory);
+
+	m_memSkBitmap = new SkBitmap();
+	InstallHBitmapPixels(m_memSkBitmap, bmpWidth, bmpHeight, true, data, m_hbitmapMemory);
+	m_memCanvas = new SkCanvas(*m_memSkBitmap);
+}
+void win32DrawText(SkCanvas* canvas, int x, int y, int width, int height, int fontHeight)
+{
+	if (hFont == NULL)
+	{
+		CreateMemoryDC(width + 4, height + 4);
+		
+		LOGFONT lf;
+		memset(&lf, 0, sizeof(LOGFONT));
+		lf.lfHeight = fontHeight;
+		lf.lfWidth = 0;
+		lf.lfWeight = 0;
+		lf.lfWeight = FW_NORMAL;
+		lf.lfItalic = FALSE;
+		lf.lfUnderline = FALSE;
+		lf.lfCharSet = DEFAULT_CHARSET;
+		lf.lfQuality = CLEARTYPE_QUALITY;
+		lf.lfPitchAndFamily = 0;
+
+		lstrcpy(lf.lfFaceName, s_fontName);
+		hFont = CreateFontIndirect(&lf);
+		
+
+		if (MM_TEXT == GetMapMode(m_hdcMemory))
+		{
+			OutputDebugStringA("MM_TEXT\n");
+		}
+	}
+	m_memCanvas->clear(SK_ColorWHITE);
+	int textLen = lstrlen(s_text);
+	RECT rc;
+	rc.left = 2;
+	rc.top = 2;
+	rc.right = rc.left + width;
+	rc.bottom = rc.top + height;
+	HFONT hOldFont = (HFONT)SelectObject(m_hdcMemory, hFont);
+	TEXTMETRIC textMetric;
+	if (0 == GetTextMetrics(m_hdcMemory, &textMetric)) {
+
+	}
+	DrawText(m_hdcMemory, s_text, textLen, &rc, DT_VCENTER | DT_SINGLELINE);
+
+	SelectObject(m_hdcMemory, hOldFont);
+	
+
+	SkRect rect = SkRect::MakeXYWH(rc.left, rc.top, width, height);
+	SkPaint paintR;
+	paintR.setStyle(SkPaint::kStroke_Style);
+	paintR.setColor(SK_ColorMAGENTA);
+	m_memCanvas->drawRect(rect, paintR);
+
+	canvas->drawBitmap(*m_memSkBitmap, x-2, y-2);
+}
+

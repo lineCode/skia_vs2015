@@ -4,6 +4,9 @@
 #include <Windows.h>
 #include "WindowWnd.h"
 
+#include "LeftChildWindowWnd.h"
+#include "RightChildWindowWnd.h"
+
 class CLyraWindow;
 class CFrameWindowWnd : public CWindowWnd
 {
@@ -19,15 +22,10 @@ public:
 
 	LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-	void SetReDrawTimer(int elapse);
-	void KillReDrawTimer();
 
 protected:
-	//
-	CLyraWindow * m_pPaintWnd;
-	bool m_hasRedrawTimer;
+	CLeftChildWindowWnd * m_pLeftChild;
+	CRightChildWindowWnd * m_pRightChild;
 };
-
-extern CFrameWindowWnd *frame;
 
 #endif//__FRAMEWINDOWWND_H__
