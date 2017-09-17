@@ -27,8 +27,8 @@ constexpr int kStopDecoding = 2;
 
 class SkAPngNormalFrameDecoder final : public SkAPngFrameDecoder {
 public:
-	SkAPngNormalFrameDecoder(const SkEncodedInfo& encodedInfo, const SkImageInfo& imageInfo, std::unique_ptr<SkStream> pngStream, void* png_ptr, void* info_ptr, int bitDepth, SkAPngCodec* pMainCodec, int frameIndex)
-		: INHERITED(encodedInfo, imageInfo, std::move(pngStream), png_ptr, info_ptr, bitDepth, pMainCodec, frameIndex)
+	SkAPngNormalFrameDecoder(const SkEncodedInfo& encodedInfo, const SkImageInfo& imageInfo, SkStream* pngStream, void* png_ptr, void* info_ptr, int bitDepth, SkAPngCodec* pMainCodec, int frameIndex)
+		: INHERITED(encodedInfo, imageInfo, pngStream, png_ptr, info_ptr, bitDepth, pMainCodec, frameIndex)
 		, fRowsWrittenToOutput(0)
 		, fDst(nullptr)
 		, fRowBytes(0)
@@ -70,7 +70,13 @@ private:
 		fFirstRow = 0;
 		fLastRow = height - 1;
 
-		this->processData();
+
+		const std::vector<SkAPngFrameBlock>* blocks = m_pMainCodec->getAPngReader()->frameContext(m_frameIndex)->getIDATBlocks();
+		for (std::vector<SkAPngFrameBlock>::const_iterator it = blocks->begin();
+			it != blocks->end(); it++)
+		{
+			processfdATData(it->blockPosition, it->blockSize);
+		}
 
 		if (fRowsWrittenToOutput == height) {
 			return SkCodec::kSuccess;
@@ -91,30 +97,9 @@ private:
 	}
 
 	void setRange(int firstRow, int lastRow, void* dst, size_t rowBytes) override {
-		png_set_progressive_read_fn(this->png_ptr(), this, nullptr, RowCallback, nullptr);
-		fFirstRow = firstRow;
-		fLastRow = lastRow;
-		fDst = dst;
-		fRowBytes = rowBytes;
-		fRowsWrittenToOutput = 0;
-		fRowsNeeded = fLastRow - fFirstRow + 1;
 	}
 
 	SkCodec::Result decode(int* rowsDecoded) override {
-		if (this->swizzler()) {
-			const int sampleY = this->swizzler()->sampleY();
-			fRowsNeeded = get_scaled_dimension(fLastRow - fFirstRow + 1, sampleY);
-		}
-		this->processData();
-
-		if (fRowsWrittenToOutput == fRowsNeeded) {
-			return SkCodec::kSuccess;
-		}
-
-		if (rowsDecoded) {
-			*rowsDecoded = fRowsWrittenToOutput;
-		}
-
 		return SkCodec::kIncompleteInput;
 	}
 
@@ -143,8 +128,8 @@ private:
 
 class SkAPngInterlacedFrameDecoder final : public SkAPngFrameDecoder {
 public:
-	SkAPngInterlacedFrameDecoder(const SkEncodedInfo& encodedInfo, const SkImageInfo& imageInfo, std::unique_ptr<SkStream> pngStream, void* png_ptr, void* info_ptr, int bitDepth, int numberPasses, SkAPngCodec* pMainCodec, int frameIndex)
-		: INHERITED(encodedInfo, imageInfo, std::move(pngStream), png_ptr, info_ptr, bitDepth, pMainCodec, frameIndex)
+	SkAPngInterlacedFrameDecoder(const SkEncodedInfo& encodedInfo, const SkImageInfo& imageInfo, SkStream* pngStream, void* png_ptr, void* info_ptr, int bitDepth, int numberPasses, SkAPngCodec* pMainCodec, int frameIndex)
+		: INHERITED(encodedInfo, imageInfo, pngStream, png_ptr, info_ptr, bitDepth, pMainCodec, frameIndex)
 		, fNumberPasses(numberPasses)
 		, fFirstRow(0)
 		, fLastRow(0)
@@ -237,52 +222,9 @@ private:
 	}
 
 	void setRange(int firstRow, int lastRow, void* dst, size_t rowBytes) override {
-		// FIXME: We could skip rows in the interlace buffer that we won't put in the output.
-		this->setUpInterlaceBuffer(lastRow - firstRow + 1);
-		png_set_progressive_read_fn(this->png_ptr(), this, nullptr, InterlacedRowCallback, nullptr);
-		fFirstRow = firstRow;
-		fLastRow = lastRow;
-		fDst = dst;
-		fRowBytes = rowBytes;
-		fLinesDecoded = 0;
 	}
 
 	SkCodec::Result decode(int* rowsDecoded) override {
-		this->processData();
-
-		// Now apply Xforms on all the rows that were decoded.
-		if (!fLinesDecoded) {
-			if (rowsDecoded) {
-				*rowsDecoded = 0;
-			}
-			return SkCodec::kIncompleteInput;
-		}
-
-		const int sampleY = this->swizzler() ? this->swizzler()->sampleY() : 1;
-		const int rowsNeeded = get_scaled_dimension(fLastRow - fFirstRow + 1, sampleY);
-		int rowsWrittenToOutput = 0;
-
-		// FIXME: For resuming interlace, we may swizzle a row that hasn't changed. But it
-		// may be too tricky/expensive to handle that correctly.
-
-		// Offset srcRow by get_start_coord rows. We do not need to account for fFirstRow,
-		// since the first row in fInterlaceBuffer corresponds to fFirstRow.
-		png_bytep srcRow = SkTAddOffset<png_byte>(fInterlaceBuffer.get(),
-			fPng_rowbytes * get_start_coord(sampleY));
-		void* dst = fDst;
-		for (; rowsWrittenToOutput < rowsNeeded; rowsWrittenToOutput++) {
-			this->applyXformRow(dst, srcRow);
-			dst = SkTAddOffset<void>(dst, fRowBytes);
-			srcRow = SkTAddOffset<png_byte>(srcRow, fPng_rowbytes * sampleY);
-		}
-
-		if (fInterlacedComplete) {
-			return SkCodec::kSuccess;
-		}
-
-		if (rowsDecoded) {
-			*rowsDecoded = rowsWrittenToOutput;
-		}
 		return SkCodec::kIncompleteInput;
 	}
 
@@ -299,12 +241,12 @@ SkAPngFrameDecoder::~SkAPngFrameDecoder()
 {
 }
 
-SkAPngFrameDecoder::SkAPngFrameDecoder(const SkEncodedInfo& encodedInfo, const SkImageInfo& imageInfo, std::unique_ptr<SkStream> pngStream, void* png_ptr, void* info_ptr, int bitDepth, SkAPngCodec* pMainCodec, int frameIndex)
-	: INHERITED(encodedInfo, imageInfo, std::move(pngStream), nullptr, png_ptr, info_ptr, pMainCodec->getBitDepth())
+SkAPngFrameDecoder::SkAPngFrameDecoder(const SkEncodedInfo& encodedInfo, const SkImageInfo& imageInfo, SkStream* pStream, void* png_ptr, void* info_ptr, int bitDepth, SkAPngCodec* pMainCodec, int frameIndex)
+	: INHERITED(encodedInfo, imageInfo, nullptr, nullptr, png_ptr, info_ptr, pMainCodec->getBitDepth())
+	, m_pMainCodecStream(pStream)
 	, m_pMainCodec(pMainCodec)
 	, m_frameIndex(frameIndex)
 {
-	setIdatLength(stream()->getLength());
 }
 
 static SkCodec::Result read_frame_header(png_structp* png_ptrp, png_infop* info_ptrp, SkAPngReader* pAPngReader, int frameIndex) {
@@ -325,25 +267,14 @@ static SkCodec::Result read_frame_header(png_structp* png_ptrp, png_infop* info_
 
 	png_set_progressive_read_fn(png_ptr, nullptr, nullptr, nullptr, nullptr);
 
-	static png_byte dataPNG[8] = { 137, 80, 78, 71, 13, 10, 26, 10 };
-	static png_byte dataIHDR[25] = { 0 };
-
 	const SkFrame* frame = pAPngReader->getFrame(frameIndex);
 
 	png_set_crc_action(png_ptr, PNG_CRC_QUIET_USE, PNG_CRC_QUIET_USE);
 	// parse png header
-
-#if 0
-	png_process_data(png_ptr, info_ptr, dataPNG, 8);
-	pAPngReader->setIHDR_w_h(frame->width(), frame->height());
-	memcpy(dataIHDR, pAPngReader->getIHDR(), 25);
-	png_process_data(png_ptr, info_ptr, dataIHDR, 25);
-#else
 	pAPngReader->setIHDR_w_h(frame->width(), frame->height());
 	png_bytep pAPngHeadData = (png_bytep)pAPngReader->getAPngHeadData();	
 	size_t lenAPngHeadData = pAPngReader->getAPngHeadDataLen();
 	png_process_data(png_ptr, info_ptr, pAPngHeadData, lenAPngHeadData);
-#endif
 
 	// set every frame's png_ptr
 	{
@@ -465,7 +396,7 @@ std::unique_ptr<SkAPngFrameDecoder> SkAPngFrameDecoder::MakeFrameDecoder(SkStrea
 				int frameH = frame->height();
 				SkImageInfo frameImageInfo = SkImageInfo::Make(frameW, frameH, imageInfo.colorType(), imageInfo.alphaType(), imageInfo.refColorSpace());
 				int bitDepth = pMainCodec->getBitDepth();
-				outCodec = new SkAPngNormalFrameDecoder(encodedInfo, frameImageInfo, std::unique_ptr<SkStream>(frameStream), png_ptr, info_ptr, bitDepth, pMainCodec, frameIndex);
+				outCodec = new SkAPngNormalFrameDecoder(encodedInfo, frameImageInfo, frameStream, png_ptr, info_ptr, bitDepth, pMainCodec, frameIndex);
 			}
 			else if (E_Interlaced_Decoder == decodeType)
 			{
@@ -478,10 +409,53 @@ std::unique_ptr<SkAPngFrameDecoder> SkAPngFrameDecoder::MakeFrameDecoder(SkStrea
 				int numPasses = pMainCodec->getAPngReader()->getNumberPasses();
 				SkImageInfo frameImageInfo = SkImageInfo::Make(frameW, frameH, imageInfo.colorType(), imageInfo.alphaType(), imageInfo.refColorSpace());
 				int bitDepth = pMainCodec->getBitDepth();
-				outCodec = new SkAPngInterlacedFrameDecoder(encodedInfo, frameImageInfo, std::unique_ptr<SkStream>(frameStream), png_ptr, info_ptr, bitDepth, numPasses, pMainCodec, frameIndex);
+				outCodec = new SkAPngInterlacedFrameDecoder(encodedInfo, frameImageInfo, frameStream, png_ptr, info_ptr, bitDepth, numPasses, pMainCodec, frameIndex);
 			}
 		}
 	}
 
 	return std::unique_ptr<SkAPngFrameDecoder>(outCodec);
+}
+
+void SkAPngFrameDecoder::processfdATData(size_t fdATPos, size_t fdATLength) {
+	m_pMainCodecStream->seek(fdATPos);
+	switch (setjmp(PNG_JMPBUF(fPng_ptr))) {
+	case kPngError:
+		// There was an error. Stop processing data.
+		// FIXME: Do we need to discard png_ptr?
+		return;
+	case kStopDecoding:
+		// We decoded all the lines we want.
+		return;
+	case kSetJmpOkay:
+		// Everything is okay.
+		break;
+	default:
+		// No other values should be passed to longjmp.
+		SkASSERT(false);
+	}
+
+	// Arbitrary buffer size
+	constexpr size_t kBufferSize = 4096;
+	char buffer[kBufferSize];
+
+	size_t fIdatLength = fdATLength;
+
+	bool iend = false;
+
+	// process fake IDAT header
+	png_byte idat[] = { 0, 0, 0, 0, 'I', 'D', 'A', 'T' };
+	png_save_uint_32(idat, fIdatLength);
+	png_process_data(fPng_ptr, fInfo_ptr, idat, 8);
+
+	// process fdAT data
+	while (fIdatLength > 0) {
+		const size_t bytesToProcess = std::min(kBufferSize, fIdatLength);
+		const size_t bytesRead = m_pMainCodecStream->read(buffer, bytesToProcess);
+		png_process_data(fPng_ptr, fInfo_ptr, (png_bytep)buffer, bytesRead);
+		if (bytesRead < bytesToProcess) {
+			return;
+		}
+		fIdatLength -= bytesToProcess;
+	}
 }

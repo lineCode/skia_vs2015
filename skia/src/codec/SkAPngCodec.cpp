@@ -1012,40 +1012,5 @@ const SkFrameHolder* SkAPngCodec::getFrameHolder() const
 
 SkStream *SkAPngCodec::makeFrameStream(int frameIndex)
 {
-	if (m_pAPngReader)
-	{
-		const SkAPngFrameContext* curFrame = m_pAPngReader->frameContext(frameIndex);
-		const std::vector<SkAPngFrameBlock> * curBlocks = curFrame->getIDATBlocks();
-
-		size_t oldPos = stream()->getPosition();
-
-		size_t streamLen = 0;
-		int blockCount = curBlocks->size();
-		for (int i = 0; i < blockCount; i++)
-		{
-			streamLen += curBlocks->at(i).blockSize;
-			streamLen += 4;
-		}
-
-		void* buffer = malloc(streamLen);
-		char *pBuf = (char*)buffer;
-		for (int i = 0; i < blockCount; i++)
-		{
-			size_t blockSize = curBlocks->at(i).blockSize;
-			size_t blockPos = curBlocks->at(i).blockPosition;
-			stream()->seek(blockPos);
-			stream()->read(pBuf, blockSize);
-			pBuf += blockSize;
-			memcpy(pBuf, "IDAT", 4);
-			pBuf += 4;
-		}
-		pBuf -= 4;
-		memcpy(pBuf, "IEND", 4);
-
-		stream()->seek(oldPos);
-
-		std::unique_ptr<SkMemoryStream> frameStream = SkMemoryStream::MakeDirect(buffer, streamLen);
-		return frameStream.release();
-	}
-	return nullptr;
+	return this->stream();
 }

@@ -20,9 +20,11 @@ public:
 	SkCodec::Result decodeFrame(const SkImageInfo& dstInfo, void* dst, const Options& options, size_t rowBytes, int* rowsDecoded);
 
 protected:
-	SkAPngFrameDecoder(const SkEncodedInfo&, const SkImageInfo&, std::unique_ptr<SkStream>,
-		void* png_ptr, void* info_ptr, int bitDepth, SkAPngCodec* pMainCodec, int frameIndex);
+	SkAPngFrameDecoder(const SkEncodedInfo&, const SkImageInfo&, SkStream* pStream, void* png_ptr, void* info_ptr, int bitDepth, SkAPngCodec* pMainCodec, int frameIndex);
 
+	void processfdATData(size_t fdATPos, size_t fdATLength);
+	
+	SkStream * m_pMainCodecStream;
 	SkAPngCodec* m_pMainCodec;
 	int m_frameIndex;
 
