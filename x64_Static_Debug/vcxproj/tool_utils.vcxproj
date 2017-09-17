@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="14.0">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="GN|x64">
@@ -13,7 +13,7 @@
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
     <CharacterSet>Unicode</CharacterSet>
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -21,19 +21,19 @@
   <PropertyGroup Label="Locals">
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
-  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
-  <ImportGroup Label="ExtensionSettings"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <OutDir>../../../vs2015/x64_Static_Debug/</OutDir>
     <TargetName>$(ProjectName)</TargetName>
     <TargetPath>$(OutDir)\$(ProjectName)$(TargetExt)</TargetPath>
-  <IntDir>$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
-</PropertyGroup>
+    <IntDir>$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/Tools/MSVC/14.10.25017/include;C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include;Windows Kits/10/Include/10.0.14393.0/shared;Windows Kits/10/Include/10.0.14393.0/ucrt;Windows Kits/10/Include/10.0.14393.0/um;Windows Kits/10/Include/10.0.14393.0/winrt;C:/Program Files (x86)/Windows Kits/8.1/Include/shared;C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt;C:/Program Files (x86)/Windows Kits/8.1/Include/um;C:/Program Files (x86)/Windows Kits/8.1/Include/winrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/shared;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/ucrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/um;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/winrt;../../../tools;../../../tools/debugger;../../../tools/timer;../../../tools/trace;../../../include/private;../../../src/c;../../../src/codec;../../../src/core;../../../src/effects;../../../src/fonts;../../../src/image;../../../src/images;../../../src/lazy;../../../src/opts;../../../src/pathops;../../../src/pdf;../../../src/ports;../../../src/sfnt;../../../src/shaders;../../../src/shaders/gradients;../../../src/sksl;../../../src/utils;../../../src/utils/win;../../../src/xml;../../../third_party/gif;../../../src/gpu;../../../third_party/externals/jsoncpp/include;../../../tools/flags;../../../tools/flags;../../../third_party/libpng;../../../include/android;../../../include/c;../../../include/codec;../../../include/config;../../../include/core;../../../include/effects;../../../include/encode;../../../include/gpu;../../../include/gpu/gl;../../../include/pathops;../../../include/ports;../../../include/svg;../../../include/utils;../../../include/utils/mac;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\winrt;$(VSInstallDir)\VC\atlmfc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -47,38 +47,37 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;SK_GAMMA_APPLY_TO_A8;SK_ANGLE;SK_ENABLE_DISCRETE_GPU;GR_TEST_UTILS=1;SK_ENABLE_SPIRV_VALIDATION;SK_HAS_JPEG_LIBRARY;SK_SUPPORT_PDF;SK_HAS_PNG_LIBRARY;SK_HAS_WEBP_LIBRARY;SK_XML;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
       <WarningLevel>Level3</WarningLevel>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='GN|x64'">Disabled</Optimization>
     </ClCompile>
-    <Link/>
+    <Link />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="../../../tools/trace/SkChromeTracingTracer.h"/>
-    <ClInclude Include="../../../tools/trace/SkDebugfTracer.h"/>
-    <ClInclude Include="../../../tools/trace/SkEventTracingPriv.h"/>
+    <ClInclude Include="../../../tools/trace/SkChromeTracingTracer.h" />
+    <ClInclude Include="../../../tools/trace/SkDebugfTracer.h" />
+    <ClInclude Include="../../../tools/trace/SkEventTracingPriv.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="../../../tools/AndroidSkDebugToStdOut.cpp"/>
-    <ClCompile Include="../../../tools/CrashHandler.cpp"/>
-    <ClCompile Include="../../../tools/LsanSuppressions.cpp"/>
-    <ClCompile Include="../../../tools/ProcStats.cpp"/>
-    <ClCompile Include="../../../tools/Resources.cpp"/>
-    <ClCompile Include="../../../tools/ThermalManager.cpp"/>
-    <ClCompile Include="../../../tools/UrlDataManager.cpp"/>
-    <ClCompile Include="../../../tools/debugger/SkDebugCanvas.cpp"/>
-    <ClCompile Include="../../../tools/debugger/SkDrawCommand.cpp"/>
-    <ClCompile Include="../../../tools/debugger/SkJsonWriteBuffer.cpp"/>
-    <ClCompile Include="../../../tools/debugger/SkObjectParser.cpp"/>
-    <ClCompile Include="../../../tools/picture_utils.cpp"/>
-    <ClCompile Include="../../../tools/random_parse_path.cpp"/>
-    <ClCompile Include="../../../tools/sk_tool_utils.cpp"/>
-    <ClCompile Include="../../../tools/sk_tool_utils_font.cpp"/>
-    <ClCompile Include="../../../tools/timer/Timer.cpp"/>
-    <ClCompile Include="../../../tools/trace/SkChromeTracingTracer.cpp"/>
-    <ClCompile Include="../../../tools/trace/SkDebugfTracer.cpp"/>
-    <ClCompile Include="../../../tools/trace/SkEventTracingPriv.cpp"/>
+    <ClCompile Include="../../../tools/AndroidSkDebugToStdOut.cpp" />
+    <ClCompile Include="../../../tools/CrashHandler.cpp" />
+    <ClCompile Include="../../../tools/LsanSuppressions.cpp" />
+    <ClCompile Include="../../../tools/ProcStats.cpp" />
+    <ClCompile Include="../../../tools/Resources.cpp" />
+    <ClCompile Include="../../../tools/ThermalManager.cpp" />
+    <ClCompile Include="../../../tools/UrlDataManager.cpp" />
+    <ClCompile Include="../../../tools/debugger/SkDebugCanvas.cpp" />
+    <ClCompile Include="../../../tools/debugger/SkDrawCommand.cpp" />
+    <ClCompile Include="../../../tools/debugger/SkJsonWriteBuffer.cpp" />
+    <ClCompile Include="../../../tools/debugger/SkObjectParser.cpp" />
+    <ClCompile Include="../../../tools/picture_utils.cpp" />
+    <ClCompile Include="../../../tools/random_parse_path.cpp" />
+    <ClCompile Include="../../../tools/sk_tool_utils.cpp" />
+    <ClCompile Include="../../../tools/sk_tool_utils_font.cpp" />
+    <ClCompile Include="../../../tools/timer/Timer.cpp" />
+    <ClCompile Include="../../../tools/trace/SkChromeTracingTracer.cpp" />
+    <ClCompile Include="../../../tools/trace/SkDebugfTracer.cpp" />
+    <ClCompile Include="../../../tools/trace/SkEventTracingPriv.cpp" />
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
-  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
-  <ImportGroup Label="ExtensionTargets"/>
-  
-  
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

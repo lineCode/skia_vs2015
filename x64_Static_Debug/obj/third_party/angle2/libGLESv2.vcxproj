@@ -1,0 +1,1735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="GN|x64">
+      <Configuration>GN</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9819C479-FA7B-791E-0155-285FDF0AA007}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libGLESv2</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>../../../../../vs2015/x64_Static_Debug/</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)\$(ProjectName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/Tools/MSVC/14.10.25017/include;C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include;Windows Kits/10/Include/10.0.14393.0/shared;Windows Kits/10/Include/10.0.14393.0/ucrt;Windows Kits/10/Include/10.0.14393.0/um;Windows Kits/10/Include/10.0.14393.0/winrt;C:/Program Files (x86)/Windows Kits/8.1/Include/shared;C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt;C:/Program Files (x86)/Windows Kits/8.1/Include/um;C:/Program Files (x86)/Windows Kits/8.1/Include/winrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/shared;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/ucrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/um;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/winrt;../../../../../vs2015/x64_Static_Debug/gen/angle2;../../../../../third_party/externals/angle2/include;../../../../../third_party/externals/angle2/src;../../../../../third_party/externals/angle2/src/common/third_party/base;../../../../../third_party/externals/angle2/src/third_party/khronos;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\winrt;$(VSInstallDir)\VC\atlmfc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/FS /bigobj /utf-8 /GR- /Zi %(AdditionalOptions)</AdditionalOptions>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>LIBANGLE_IMPLEMENTATION;LIBGLESV2_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;ANGLE_ENABLE_ESSL;ANGLE_ENABLE_GLSL;ANGLE_ENABLE_HLSL;ANGLE_ENABLE_OPENGL;EGL_EGLEXT_PROTOTYPES;GL_GLEXT_PROTOTYPES;ANGLE_ENABLE_D3D11;ANGLE_ENABLE_D3D9;GL_APICALL=;EGLAPI=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/DiagnosticsBase.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.DiagnosticsBase.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.DiagnosticsBase.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/DiagnosticsBase.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/DirectiveHandlerBase.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.DirectiveHandlerBase.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.DirectiveHandlerBase.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/DirectiveHandlerBase.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/DirectiveParser.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.DirectiveParser.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.DirectiveParser.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/DirectiveParser.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/ExpressionParser.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.ExpressionParser.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.ExpressionParser.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/ExpressionParser.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/ExpressionParser.y" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Input.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Input.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Input.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Input.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Lexer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Lexer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Lexer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Lexer.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Macro.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Macro.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Macro.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Macro.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/MacroExpander.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.MacroExpander.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.MacroExpander.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/MacroExpander.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Preprocessor.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Preprocessor.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Preprocessor.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Preprocessor.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/SourceLocation.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Token.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Token.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Token.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Token.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Tokenizer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Tokenizer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/preprocessor/libGLESv2.Tokenizer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Tokenizer.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/Tokenizer.l" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/preprocessor/numeric_lex.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/EGL/egl.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/EGL/eglext.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/EGL/eglplatform.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLES2/gl2.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLES2/gl2ext.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLES2/gl2platform.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLES3/gl3.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLES3/gl3platform.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLES3/gl31.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLES3/gl32.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLSLANG/ShaderLang.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/GLSLANG/ShaderVars.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/KHR/khrplatform.h" />
+    <None Include="../../../../../third_party/externals/angle2/include/angle_gl.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/AddAndTrueToLoopCondition.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.AddAndTrueToLoopCondition.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.AddAndTrueToLoopCondition.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/AddAndTrueToLoopCondition.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/BaseTypes.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/BuiltInFunctionEmulator.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.BuiltInFunctionEmulator.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.BuiltInFunctionEmulator.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/BuiltInFunctionEmulator.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/BreakVariableAliasingInInnerLoops.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.BreakVariableAliasingInInnerLoops.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.BreakVariableAliasingInInnerLoops.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/BreakVariableAliasingInInnerLoops.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/Cache.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Cache.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Cache.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Cache.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/CallDAG.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.CallDAG.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.CallDAG.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/CallDAG.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ClampPointSize.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ClampPointSize.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ClampPointSize.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ClampPointSize.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/CodeGen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.CodeGen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.CodeGen.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/CollectVariables.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.CollectVariables.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.CollectVariables.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/CollectVariables.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Common.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/Compiler.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Compiler.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Compiler.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Compiler.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ConstantUnion.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ConstantUnion.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ConstantUnion.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ConstantUnion.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/DeclareAndInitBuiltinsForInstancedMultiview.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/DeclareAndInitBuiltinsForInstancedMultiview.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.DeclareAndInitBuiltinsForInstancedMultiview.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.DeclareAndInitBuiltinsForInstancedMultiview.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/DeferGlobalInitializers.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.DeferGlobalInitializers.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.DeferGlobalInitializers.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/DeferGlobalInitializers.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/Diagnostics.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Diagnostics.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Diagnostics.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Diagnostics.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/DirectiveHandler.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.DirectiveHandler.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.DirectiveHandler.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/DirectiveHandler.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/EmulateGLFragColorBroadcast.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.EmulateGLFragColorBroadcast.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.EmulateGLFragColorBroadcast.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/EmulateGLFragColorBroadcast.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/EmulatePrecision.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.EmulatePrecision.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.EmulatePrecision.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/EmulatePrecision.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ExpandIntegerPowExpressions.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ExpandIntegerPowExpressions.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ExpandIntegerPowExpressions.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ExpandIntegerPowExpressions.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ExtensionBehavior.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/FindMain.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.FindMain.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.FindMain.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/FindMain.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/FindSymbolNode.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.FindSymbolNode.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.FindSymbolNode.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/FindSymbolNode.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/FlagStd140Structs.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.FlagStd140Structs.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.FlagStd140Structs.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/FlagStd140Structs.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/HashNames.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.HashNames.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.HashNames.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/HashNames.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/InfoSink.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.InfoSink.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.InfoSink.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/InfoSink.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/Initialize.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Initialize.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Initialize.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Initialize.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/InitializeDll.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.InitializeDll.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.InitializeDll.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/InitializeDll.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/InitializeGlobals.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/InitializeVariables.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.InitializeVariables.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.InitializeVariables.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/InitializeVariables.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/IntermNode.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/IntermNode.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IntermNode.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IntermNode.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/IntermNodePatternMatcher.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IntermNodePatternMatcher.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IntermNodePatternMatcher.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/IntermNodePatternMatcher.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/IntermNode_util.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IntermNode_util.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IntermNode_util.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/IntermNode_util.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/IntermTraverse.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IntermTraverse.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IntermTraverse.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/IntermTraverse.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/IsASTDepthBelowLimit.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IsASTDepthBelowLimit.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.IsASTDepthBelowLimit.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/IsASTDepthBelowLimit.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/NodeSearch.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/Operator.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Operator.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Operator.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Operator.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputTree.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputTree.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputTree.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputTree.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ParamType.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ParseContext.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ParseContext.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ParseContext.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ParseContext.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/PoolAlloc.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.PoolAlloc.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.PoolAlloc.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/PoolAlloc.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Pragma.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/PruneEmptyDeclarations.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.PruneEmptyDeclarations.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.PruneEmptyDeclarations.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/PruneEmptyDeclarations.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/PrunePureLiteralStatements.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.PrunePureLiteralStatements.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.PrunePureLiteralStatements.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/PrunePureLiteralStatements.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/QualifierTypes.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/QualifierTypes.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.QualifierTypes.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.QualifierTypes.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RecordConstantPrecision.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RecordConstantPrecision.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RecordConstantPrecision.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RecordConstantPrecision.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RegenerateStructNames.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RegenerateStructNames.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RegenerateStructNames.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RegenerateStructNames.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RemoveInvariantDeclaration.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RemoveInvariantDeclaration.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RemoveInvariantDeclaration.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RemoveInvariantDeclaration.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RemovePow.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RemovePow.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RemovePow.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RemovePow.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteDoWhile.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteDoWhile.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteDoWhile.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteDoWhile.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteTexelFetchOffset.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteTexelFetchOffset.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteTexelFetchOffset.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteTexelFetchOffset.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteUnaryMinusOperatorFloat.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteUnaryMinusOperatorFloat.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteUnaryMinusOperatorFloat.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteUnaryMinusOperatorFloat.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteUnaryMinusOperatorInt.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteUnaryMinusOperatorInt.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteUnaryMinusOperatorInt.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteUnaryMinusOperatorInt.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RunAtTheEndOfShader.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RunAtTheEndOfShader.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RunAtTheEndOfShader.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RunAtTheEndOfShader.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ScalarizeVecAndMatConstructorArgs.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ScalarizeVecAndMatConstructorArgs.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ScalarizeVecAndMatConstructorArgs.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ScalarizeVecAndMatConstructorArgs.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/SearchSymbol.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SearchSymbol.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SearchSymbol.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/SearchSymbol.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/SeparateDeclarations.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SeparateDeclarations.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SeparateDeclarations.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/SeparateDeclarations.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Severity.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ShaderLang.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ShaderLang.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ShaderLang.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ShaderVars.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ShaderVars.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ShaderVars.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/SimplifyLoopConditions.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SimplifyLoopConditions.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SimplifyLoopConditions.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/SimplifyLoopConditions.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/SymbolTable.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SymbolTable.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SymbolTable.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/SymbolTable.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/Types.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Types.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.Types.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/Types.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/UnfoldShortCircuitAST.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UnfoldShortCircuitAST.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UnfoldShortCircuitAST.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/UnfoldShortCircuitAST.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/UseInterfaceBlockFields.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UseInterfaceBlockFields.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UseInterfaceBlockFields.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/UseInterfaceBlockFields.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateGlobalInitializer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateGlobalInitializer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateGlobalInitializer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateGlobalInitializer.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateLimitations.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateLimitations.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateLimitations.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateLimitations.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateMaxParameters.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateMaxParameters.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateMaxParameters.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateMaxParameters.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateMultiviewWebGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateMultiviewWebGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateMultiviewWebGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateMultiviewWebGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateOutputs.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateOutputs.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateOutputs.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateOutputs.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateSwitch.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateSwitch.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ValidateSwitch.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ValidateSwitch.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/VariablePacker.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.VariablePacker.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.VariablePacker.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/VariablePacker.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/blocklayout.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.blocklayout.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.blocklayout.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/blocklayout.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/glslang.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/glslang.l" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/glslang.y" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/glslang_lex.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.glslang_lex.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.glslang_lex.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/glslang_tab.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.glslang_tab.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.glslang_tab.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/glslang_tab.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/length_limits.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/util.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.util.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.util.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/util.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/third_party/compiler/ArrayBoundsClamper.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/third_party/compiler/libGLESv2.ArrayBoundsClamper.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/third_party/compiler/libGLESv2.ArrayBoundsClamper.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/third_party/compiler/ArrayBoundsClamper.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputESSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputESSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputESSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputESSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/TranslatorESSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.TranslatorESSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.TranslatorESSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/TranslatorESSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/BuiltInFunctionEmulatorGLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.BuiltInFunctionEmulatorGLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.BuiltInFunctionEmulatorGLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/BuiltInFunctionEmulatorGLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ExtensionGLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ExtensionGLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ExtensionGLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ExtensionGLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputGLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputGLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputGLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputGLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputGLSLBase.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputGLSLBase.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputGLSLBase.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputGLSLBase.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/TranslatorGLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.TranslatorGLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.TranslatorGLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/TranslatorGLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/VersionGLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.VersionGLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.VersionGLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/VersionGLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/AddDefaultReturnStatements.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.AddDefaultReturnStatements.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.AddDefaultReturnStatements.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/AddDefaultReturnStatements.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ArrayReturnValueToOutParameter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ArrayReturnValueToOutParameter.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ArrayReturnValueToOutParameter.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ArrayReturnValueToOutParameter.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/ASTMetadataHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ASTMetadataHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.ASTMetadataHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/ASTMetadataHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/blocklayoutHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.blocklayoutHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.blocklayoutHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/blocklayoutHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/BuiltInFunctionEmulatorHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.BuiltInFunctionEmulatorHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.BuiltInFunctionEmulatorHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/BuiltInFunctionEmulatorHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.OutputHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/OutputHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RemoveDynamicIndexing.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RemoveDynamicIndexing.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RemoveDynamicIndexing.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RemoveDynamicIndexing.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RemoveSwitchFallThrough.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RemoveSwitchFallThrough.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RemoveSwitchFallThrough.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RemoveSwitchFallThrough.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteElseBlocks.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteElseBlocks.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.RewriteElseBlocks.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/RewriteElseBlocks.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/SeparateArrayInitialization.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SeparateArrayInitialization.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SeparateArrayInitialization.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/SeparateArrayInitialization.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/SeparateExpressionsReturningArrays.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SeparateExpressionsReturningArrays.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SeparateExpressionsReturningArrays.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/SeparateExpressionsReturningArrays.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/SplitSequenceOperator.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SplitSequenceOperator.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.SplitSequenceOperator.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/SplitSequenceOperator.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/StructureHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.StructureHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.StructureHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/StructureHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/TextureFunctionHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.TextureFunctionHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.TextureFunctionHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/TextureFunctionHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/TranslatorHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.TranslatorHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.TranslatorHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/TranslatorHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/UnfoldShortCircuitToIf.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UnfoldShortCircuitToIf.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UnfoldShortCircuitToIf.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/UnfoldShortCircuitToIf.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/UniformHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UniformHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UniformHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/UniformHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/UtilsHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UtilsHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.UtilsHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/compiler/translator/UtilsHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/compiler/translator/emulated_builtin_functions_hlsl_autogen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.emulated_builtin_functions_hlsl_autogen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/compiler/translator/libGLESv2.emulated_builtin_functions_hlsl_autogen.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/event_tracer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.event_tracer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.event_tracer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/event_tracer.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/AttributeMap.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.AttributeMap.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.AttributeMap.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/AttributeMap.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/BinaryStream.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Buffer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Buffer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Buffer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Buffer.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Caps.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Caps.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Caps.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Caps.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Compiler.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Compiler.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Compiler.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Compiler.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Config.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Config.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Config.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Config.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Constants.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Context.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Context.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Context.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Context.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/ContextState.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.ContextState.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.ContextState.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/ContextState.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Debug.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Debug.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Debug.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Debug.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Device.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Device.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Device.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Device.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Display.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Display.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Display.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Display.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Error.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Error.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Error.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Error.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Error.inl" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Fence.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Fence.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Fence.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Fence.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Framebuffer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Framebuffer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Framebuffer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Framebuffer.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/FramebufferAttachment.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.FramebufferAttachment.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.FramebufferAttachment.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/FramebufferAttachment.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/HandleAllocator.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.HandleAllocator.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.HandleAllocator.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/HandleAllocator.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/HandleRangeAllocator.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/HandleRangeAllocator.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.HandleRangeAllocator.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.HandleRangeAllocator.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Image.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Image.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Image.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Image.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/ImageIndex.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/ImageIndex.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.ImageIndex.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.ImageIndex.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/IndexRangeCache.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.IndexRangeCache.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.IndexRangeCache.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/IndexRangeCache.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/LoggingAnnotator.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.LoggingAnnotator.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.LoggingAnnotator.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/LoggingAnnotator.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/MemoryProgramCache.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.MemoryProgramCache.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.MemoryProgramCache.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/MemoryProgramCache.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Path.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Path.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Path.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Path.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Platform.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Platform.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Platform.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Program.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Program.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Program.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Program.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Query.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Query.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Query.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Query.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/RefCountObject.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Renderbuffer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Renderbuffer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Renderbuffer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Renderbuffer.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/ResourceManager.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.ResourceManager.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.ResourceManager.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/ResourceManager.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/ResourceMap.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Sampler.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Sampler.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Sampler.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Sampler.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Shader.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Shader.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Shader.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Shader.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/SizedMRUCache.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/State.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.State.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.State.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/State.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Stream.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Stream.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Stream.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Stream.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Surface.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Surface.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Surface.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Surface.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Texture.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Texture.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Texture.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Texture.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Thread.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Thread.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Thread.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Thread.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/TransformFeedback.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.TransformFeedback.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.TransformFeedback.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/TransformFeedback.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/Uniform.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Uniform.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.Uniform.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Uniform.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/UniformLinker.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.UniformLinker.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.UniformLinker.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/UniformLinker.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/VaryingPacking.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.VaryingPacking.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.VaryingPacking.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/VaryingPacking.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Version.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/Version.inl" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/VertexArray.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.VertexArray.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.VertexArray.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/VertexArray.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/VertexAttribute.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.VertexAttribute.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.VertexAttribute.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/VertexAttribute.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/VertexAttribute.inl" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/WorkerThread.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.WorkerThread.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.WorkerThread.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/WorkerThread.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/angletypes.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.angletypes.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.angletypes.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/angletypes.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/angletypes.inl" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/entry_points_enum_autogen.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/es3_copy_conversion_table_autogen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.es3_copy_conversion_table_autogen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.es3_copy_conversion_table_autogen.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/features.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/format_map_autogen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.format_map_autogen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.format_map_autogen.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/formatutils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.formatutils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.formatutils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/formatutils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/histogram_macros.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/params.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.params.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.params.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/params.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/queryconversions.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.queryconversions.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.queryconversions.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/queryconversions.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/queryutils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.queryutils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.queryutils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/queryutils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/BufferImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/CompilerImpl.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/ContextImpl.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.ContextImpl.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.ContextImpl.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/ContextImpl.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/driver_utils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.driver_utils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.driver_utils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/driver_utils.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/DeviceImpl.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.DeviceImpl.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.DeviceImpl.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/DeviceImpl.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/DisplayImpl.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.DisplayImpl.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.DisplayImpl.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/DisplayImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/EGLImplFactory.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/FenceNVImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/FenceSyncImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/Format_ID_autogen.inl" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/Format_table_autogen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.Format_table_autogen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.Format_table_autogen.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/Format.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/FramebufferAttachmentObjectImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/FramebufferImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/GLImplFactory.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/ImageImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/ProgramImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/QueryImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/RenderbufferImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/SamplerImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/ShaderImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/StreamProducerImpl.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/SurfaceImpl.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.SurfaceImpl.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.SurfaceImpl.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/SurfaceImpl.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/TextureImpl.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.TextureImpl.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.TextureImpl.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/TextureImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/TransformFeedbackImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/VertexArrayImpl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/load_functions_table.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/load_functions_table_autogen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.load_functions_table_autogen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.load_functions_table_autogen.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/renderer_utils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.renderer_utils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/libGLESv2.renderer_utils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/renderer_utils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/signal_utils.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/validationEGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationEGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationEGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/validationEGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/validationES.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationES.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationES.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/validationES.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/validationES2.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationES2.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationES2.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/validationES2.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/validationES3.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationES3.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationES3.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/validationES3.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/validationES31.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationES31.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/libGLESv2.validationES31.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/validationES31.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/third_party/trace_event/trace_event.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/Color.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/Color.inl" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/Float16ToFloat32.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.Float16ToFloat32.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.Float16ToFloat32.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/MemoryBuffer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.MemoryBuffer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.MemoryBuffer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/MemoryBuffer.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/Optional.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/angleutils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.angleutils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.angleutils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/angleutils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/bitset_utils.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/debug.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.debug.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.debug.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/debug.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/mathutil.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.mathutil.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.mathutil.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/mathutil.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/matrix_utils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/platform.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/string_utils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.string_utils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.string_utils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/string_utils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/base_export.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/containers/mru_cache.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/logging.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/macros.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/numerics/safe_conversions.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/numerics/safe_conversions_impl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/numerics/safe_math.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/numerics/safe_math_impl.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/sha1.cc">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/third_party/base/anglebase/libGLESv2.sha1.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/third_party/base/anglebase/libGLESv2.sha1.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/sha1.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/base/anglebase/sys_byteorder.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/third_party/murmurhash/MurmurHash3.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/third_party/murmurhash/libGLESv2.MurmurHash3.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/third_party/murmurhash/libGLESv2.MurmurHash3.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/third_party/murmurhash/MurmurHash3.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/tls.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.tls.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.tls.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/tls.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/common/utilities.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/common/libGLESv2.utilities.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/common/libGLESv2.utilities.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/utilities.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/vector_utils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/version.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/image_util/copyimage.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/image_util/libGLESv2.copyimage.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/image_util/libGLESv2.copyimage.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/image_util/copyimage.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/image_util/copyimage.inl" />
+    <None Include="../../../../../third_party/externals/angle2/src/image_util/generatemip.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/image_util/generatemip.inl" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/image_util/imageformats.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/image_util/libGLESv2.imageformats.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/image_util/libGLESv2.imageformats.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/image_util/imageformats.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/image_util/loadimage.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/image_util/libGLESv2.loadimage.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/image_util/libGLESv2.loadimage.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/image_util/loadimage.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/image_util/loadimage.inl" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/image_util/loadimage_etc.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/image_util/libGLESv2.loadimage_etc.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/image_util/libGLESv2.loadimage_etc.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/common/angleutils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/common/debug.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_egl.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_egl.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_egl.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_egl.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_egl_ext.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_egl_ext.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_egl_ext.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_egl_ext.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_gles_2_0_autogen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_gles_2_0_autogen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_gles_2_0_autogen.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_gles_2_0_autogen.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_gles_2_0_ext.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_gles_2_0_ext.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_gles_2_0_ext.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_gles_2_0_ext.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_gles_3_0.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_gles_3_0.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_gles_3_0.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_gles_3_0.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_gles_3_1.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_gles_3_1.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.entry_points_gles_3_1.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/entry_points_gles_3_1.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libGLESv2/global_state.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.global_state.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.global_state.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/global_state.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libGLESv2/libGLESv2.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.libGLESv2.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libGLESv2/libGLESv2.libGLESv2.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/libGLESv2.def" />
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/libGLESv2.rc" />
+    <None Include="../../../../../third_party/externals/angle2/src/libGLESv2/resource.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/BlitGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.BlitGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.BlitGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/BlitGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/BufferGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.BufferGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.BufferGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/BufferGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/ClearMultiviewGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.ClearMultiviewGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.ClearMultiviewGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/ClearMultiviewGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/CompilerGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.CompilerGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.CompilerGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/CompilerGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/ContextGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.ContextGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.ContextGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/ContextGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/DisplayGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.DisplayGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.DisplayGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/DisplayGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/FenceNVGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.FenceNVGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.FenceNVGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/FenceNVGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/FenceSyncGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.FenceSyncGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.FenceSyncGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/FenceSyncGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/FramebufferGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.FramebufferGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.FramebufferGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/FramebufferGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/FunctionsGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.FunctionsGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.FunctionsGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/FunctionsGL.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/PathGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/PathGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.PathGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.PathGL.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/ProgramGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.ProgramGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.ProgramGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/ProgramGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/QueryGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.QueryGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.QueryGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/QueryGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/RenderbufferGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.RenderbufferGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.RenderbufferGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/RenderbufferGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/RendererGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.RendererGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.RendererGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/RendererGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/SamplerGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.SamplerGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.SamplerGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/SamplerGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/ShaderGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.ShaderGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.ShaderGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/ShaderGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/StateManagerGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.StateManagerGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.StateManagerGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/StateManagerGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/SurfaceGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.SurfaceGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.SurfaceGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/SurfaceGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/TextureGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.TextureGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.TextureGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/TextureGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/TransformFeedbackGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.TransformFeedbackGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.TransformFeedbackGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/TransformFeedbackGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/VertexArrayGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.VertexArrayGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.VertexArrayGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/VertexArrayGL.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/WorkaroundsGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/formatutilsgl.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.formatutilsgl.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.formatutilsgl.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/formatutilsgl.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/functionsgl_enums.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/functionsgl_typedefs.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/renderergl_utils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.renderergl_utils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/libGLESv2.renderergl_utils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/renderergl_utils.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/D3DTextureSurfaceWGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.D3DTextureSurfaceWGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.D3DTextureSurfaceWGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/D3DTextureSurfaceWGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/DisplayWGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.DisplayWGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.DisplayWGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/DisplayWGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/DXGISwapChainWindowSurfaceWGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.DXGISwapChainWindowSurfaceWGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.DXGISwapChainWindowSurfaceWGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/DXGISwapChainWindowSurfaceWGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/FunctionsWGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.FunctionsWGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.FunctionsWGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/FunctionsWGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/PbufferSurfaceWGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.PbufferSurfaceWGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.PbufferSurfaceWGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/PbufferSurfaceWGL.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/SurfaceWGL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/WindowSurfaceWGL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.WindowSurfaceWGL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.WindowSurfaceWGL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/WindowSurfaceWGL.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/functionswgl_typedefs.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/wgl_utils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.wgl_utils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/libGLESv2.wgl_utils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/gl/wgl/wgl_utils.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/third_party/khronos/GL/wglext.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/BufferD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.BufferD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.BufferD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/BufferD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/CompilerD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.CompilerD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.CompilerD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/CompilerD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/DeviceD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.DeviceD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.DeviceD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/DeviceD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/DisplayD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.DisplayD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.DisplayD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/DisplayD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/DynamicHLSL.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.DynamicHLSL.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.DynamicHLSL.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/DynamicHLSL.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/EGLImageD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.EGLImageD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.EGLImageD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/EGLImageD3D.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/formatutilsD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/FramebufferD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.FramebufferD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.FramebufferD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/FramebufferD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/HLSLCompiler.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.HLSLCompiler.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.HLSLCompiler.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/HLSLCompiler.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/ImageD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.ImageD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.ImageD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/ImageD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/IndexBuffer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.IndexBuffer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.IndexBuffer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/IndexBuffer.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/IndexDataManager.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.IndexDataManager.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.IndexDataManager.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/IndexDataManager.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/NativeWindowD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.NativeWindowD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.NativeWindowD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/NativeWindowD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/ProgramD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.ProgramD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.ProgramD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/ProgramD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/RenderbufferD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.RenderbufferD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.RenderbufferD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/RenderbufferD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/RendererD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.RendererD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.RendererD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/RendererD3D.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/RenderTargetD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/RenderTargetD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.RenderTargetD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.RenderTargetD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/SamplerD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/ShaderD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.ShaderD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.ShaderD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/ShaderD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/ShaderExecutableD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.ShaderExecutableD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.ShaderExecutableD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/ShaderExecutableD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/SurfaceD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.SurfaceD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.SurfaceD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/SurfaceD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/SwapChainD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.SwapChainD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.SwapChainD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/SwapChainD3D.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/TextureD3D.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.TextureD3D.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.TextureD3D.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/TextureD3D.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/TextureStorage.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/VertexBuffer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.VertexBuffer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.VertexBuffer.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/VertexBuffer.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/VertexDataManager.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.VertexDataManager.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/libGLESv2.VertexDataManager.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/VertexDataManager.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Blit9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Blit9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Blit9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Blit9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Buffer9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Buffer9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Buffer9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Buffer9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Context9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Context9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Context9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Context9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/DebugAnnotator9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.DebugAnnotator9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.DebugAnnotator9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/DebugAnnotator9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Fence9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Fence9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Fence9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Fence9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/formatutils9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.formatutils9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.formatutils9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/formatutils9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Framebuffer9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Framebuffer9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Framebuffer9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Framebuffer9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Image9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Image9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Image9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Image9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/IndexBuffer9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.IndexBuffer9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.IndexBuffer9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/IndexBuffer9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/NativeWindow9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.NativeWindow9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.NativeWindow9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/NativeWindow9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Query9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Query9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Query9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Query9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Renderer9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Renderer9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.Renderer9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/Renderer9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/renderer9_utils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.renderer9_utils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.renderer9_utils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/renderer9_utils.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/RenderTarget9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.RenderTarget9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.RenderTarget9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/RenderTarget9.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/ShaderCache.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/ShaderExecutable9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.ShaderExecutable9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.ShaderExecutable9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/ShaderExecutable9.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/componentmaskps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/componentmaskpremultps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/componentmaskunmultps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/luminanceps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/luminancepremultps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/luminanceunmultps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/passthroughps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/shaders/compiled/standardvs.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/StateManager9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.StateManager9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.StateManager9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/StateManager9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/SwapChain9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.SwapChain9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.SwapChain9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/SwapChain9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/TextureStorage9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.TextureStorage9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.TextureStorage9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/TextureStorage9.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/VertexArray9.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/VertexBuffer9.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.VertexBuffer9.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.VertexBuffer9.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/VertexBuffer9.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/vertexconversion.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/VertexDeclarationCache.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.VertexDeclarationCache.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/libGLESv2.VertexDeclarationCache.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d9/VertexDeclarationCache.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Blit11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Blit11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Blit11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Blit11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Buffer11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Buffer11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Buffer11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Buffer11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Clear11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Clear11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Clear11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Clear11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Context11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Context11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Context11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Context11.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/copyvertex.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/copyvertex.inl" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/DebugAnnotator11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.DebugAnnotator11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.DebugAnnotator11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/DebugAnnotator11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/dxgi_format_map_autogen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.dxgi_format_map_autogen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.dxgi_format_map_autogen.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/dxgi_support_table.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.dxgi_support_table.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.dxgi_support_table.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/dxgi_support_table.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Fence11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Fence11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Fence11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Fence11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/formatutils11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.formatutils11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.formatutils11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/formatutils11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Framebuffer11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Framebuffer11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Framebuffer11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Framebuffer11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Image11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Image11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Image11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Image11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/IndexBuffer11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.IndexBuffer11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.IndexBuffer11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/IndexBuffer11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/InputLayoutCache.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.InputLayoutCache.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.InputLayoutCache.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/InputLayoutCache.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/NativeWindow11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/PixelTransfer11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.PixelTransfer11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.PixelTransfer11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/PixelTransfer11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Query11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Query11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Query11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Query11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Renderer11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Renderer11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Renderer11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Renderer11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/ResourceManager11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.ResourceManager11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.ResourceManager11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/ResourceManager11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/renderer11_utils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.renderer11_utils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.renderer11_utils.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/renderer11_utils.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/RenderStateCache.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.RenderStateCache.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.RenderStateCache.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/RenderStateCache.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/RenderTarget11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.RenderTarget11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.RenderTarget11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/RenderTarget11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/ShaderExecutable11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.ShaderExecutable11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.ShaderExecutable11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/ShaderExecutable11.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/buffertotexture11_gs.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/buffertotexture11_ps_4f.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/buffertotexture11_ps_4i.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/buffertotexture11_ps_4ui.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/buffertotexture11_vs.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clear11_fl9vs.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clear11vs.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/cleardepth11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11_fl9ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11ps1.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11ps2.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11ps3.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11ps4.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11ps5.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11ps6.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11ps7.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearfloat11ps8.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearsint11ps1.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearsint11ps2.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearsint11ps3.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearsint11ps4.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearsint11ps5.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearsint11ps6.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearsint11ps7.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearsint11ps8.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearuint11ps1.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearuint11ps2.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearuint11ps3.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearuint11ps4.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearuint11ps5.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearuint11ps6.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearuint11ps7.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/clearuint11ps8.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftof_pm_rgba_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftof_um_rgba_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftof_pm_rgb_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftof_um_rgb_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftou_pm_rgba_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftou_pt_rgba_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftou_um_rgba_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftou_pm_rgb_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftou_pt_rgb_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/multiplyalpha_ftou_um_rgb_ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthrough2d11vs.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthrough3d11gs.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthrough3d11vs.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughdepth2d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughlum2d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughlum3d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughlumalpha2d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughlumalpha3d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughr2d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughr2di11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughr2dui11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughr3d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughr3di11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughr3dui11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrg2d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrg2di11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrg2dui11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrg3d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrg3di11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrg3dui11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgb2d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgb2di11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgb2dui11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgb3d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgb3di11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgb3dui11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgba2d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgba2di11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgba2dui11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgba3d11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgba3di11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/passthroughrgba3dui11ps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzlef2darrayps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzlef2dps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzlef3dps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzlei2darrayps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzlei2dps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzlei3dps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzleui2darrayps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzleui2dps.h" />
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/shaders/compiled/swizzleui3dps.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/StateManager11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.StateManager11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.StateManager11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/StateManager11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/StreamProducerNV12.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.StreamProducerNV12.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.StreamProducerNV12.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/StreamProducerNV12.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/SwapChain11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.SwapChain11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.SwapChain11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/SwapChain11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/TextureStorage11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.TextureStorage11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.TextureStorage11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/TextureStorage11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/TransformFeedback11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.TransformFeedback11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.TransformFeedback11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/TransformFeedback11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Trim11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Trim11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.Trim11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/Trim11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/texture_format_table_autogen.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.texture_format_table_autogen.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.texture_format_table_autogen.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/texture_format_table_utils.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/texture_format_table.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.texture_format_table.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.texture_format_table.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/texture_format_table.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/VertexArray11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.VertexArray11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.VertexArray11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/VertexArray11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/VertexBuffer11.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.VertexBuffer11.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/libGLESv2.VertexBuffer11.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/VertexBuffer11.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/win32/NativeWindow11Win32.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/win32/libGLESv2.NativeWindow11Win32.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/win32/libGLESv2.NativeWindow11Win32.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/libANGLE/renderer/d3d/d3d11/win32/NativeWindow11Win32.h" />
+    <CustomBuild Include="../../../../../third_party/externals/angle2/src/third_party/systeminfo/SystemInfo.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/angle2/src/third_party/systeminfo/libGLESv2.SystemInfo.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/angle2/src/third_party/systeminfo/libGLESv2.SystemInfo.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../../../third_party/externals/angle2/src/third_party/systeminfo/SystemInfo.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <Target Name="Build">
+    <Exec Command="call ninja.exe -C $(OutDir) ./libGLESv2.dll.lib" />
+  </Target>
+  <Target Name="Clean">
+    <Exec Command="call ninja.exe -C $(OutDir) -tclean ./libGLESv2.dll.lib" />
+  </Target>
+</Project>

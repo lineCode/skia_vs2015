@@ -45,6 +45,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='GN|x64'">Disabled</Optimization>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
@@ -83,9 +84,9 @@
     <ClCompile Include="../../../../../third_party/externals/spirv-tools/source/validate_instruction.cpp" />
     <ClCompile Include="../../../../../third_party/externals/spirv-tools/source/validate_layout.cpp" />
     <ClCompile Include="../../../../../third_party/externals/spirv-tools/source/validate_type_unique.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\basic_block_val.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\function_val.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\instruction_val.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\basic_block.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\function.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\instruction.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />

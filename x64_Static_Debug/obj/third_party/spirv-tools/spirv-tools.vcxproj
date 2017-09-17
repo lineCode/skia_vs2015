@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="GN|x64">
+      <Configuration>GN</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E363D2EB-EFC1-3F8E-9857-0A17BD9094EE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>spirv-tools</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>../../../../../vs2015/x64_Static_Debug/</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)\$(ProjectName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/Tools/MSVC/14.10.25017/include;C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include;Windows Kits/10/Include/10.0.14393.0/shared;Windows Kits/10/Include/10.0.14393.0/ucrt;Windows Kits/10/Include/10.0.14393.0/um;Windows Kits/10/Include/10.0.14393.0/winrt;C:/Program Files (x86)/Windows Kits/8.1/Include/shared;C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt;C:/Program Files (x86)/Windows Kits/8.1/Include/um;C:/Program Files (x86)/Windows Kits/8.1/Include/winrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/shared;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/ucrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/um;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/winrt;../../../../../third_party/externals/spirv-tools/include;../../../../../third_party/externals/spirv-tools/source;../../../../../vs2015/x64_Static_Debug/spirv-tools;../../../../../third_party/externals/spirv-headers/include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\winrt;$(VSInstallDir)\VC\atlmfc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/w /FS /bigobj /utf-8 /GR- /Zi %(AdditionalOptions)</AdditionalOptions>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/assembly_grammar.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.assembly_grammar.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.assembly_grammar.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/binary.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.binary.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.binary.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/diagnostic.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.diagnostic.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.diagnostic.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/disassemble.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.disassemble.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.disassemble.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/enum_string_mapping.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.enum_string_mapping.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.enum_string_mapping.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/ext_inst.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.ext_inst.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.ext_inst.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/extensions.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.extensions.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.extensions.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/libspirv.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.libspirv.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.libspirv.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/message.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.message.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.message.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/name_mapper.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.name_mapper.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.name_mapper.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opcode.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.opcode.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.opcode.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/operand.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.operand.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.operand.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/aggressive_dead_code_elim_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.aggressive_dead_code_elim_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.aggressive_dead_code_elim_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/basic_block.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.basic_block.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.basic_block.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/block_merge_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.block_merge_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.block_merge_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/build_module.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.build_module.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.build_module.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/compact_ids_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.compact_ids_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.compact_ids_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/dead_branch_elim_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.dead_branch_elim_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.dead_branch_elim_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/def_use_manager.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.def_use_manager.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.def_use_manager.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/eliminate_dead_constant_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.eliminate_dead_constant_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.eliminate_dead_constant_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/flatten_decoration_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.flatten_decoration_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.flatten_decoration_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/fold_spec_constant_op_and_composite_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.fold_spec_constant_op_and_composite_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.fold_spec_constant_op_and_composite_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/freeze_spec_constant_value_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.freeze_spec_constant_value_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.freeze_spec_constant_value_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/function.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.function.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.function.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/inline_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.inline_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.inline_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/insert_extract_elim.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.insert_extract_elim.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.insert_extract_elim.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/instruction.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.instruction.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.instruction.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/ir_loader.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.ir_loader.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.ir_loader.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/local_access_chain_convert_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.local_access_chain_convert_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.local_access_chain_convert_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/local_single_block_elim_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.local_single_block_elim_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.local_single_block_elim_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/local_single_store_elim_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.local_single_store_elim_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.local_single_store_elim_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/local_ssa_elim_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.local_ssa_elim_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.local_ssa_elim_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/module.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.module.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.module.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/optimizer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.optimizer.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.optimizer.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/pass_manager.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.pass_manager.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.pass_manager.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/set_spec_constant_default_value_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.set_spec_constant_default_value_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.set_spec_constant_default_value_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/strip_debug_info_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.strip_debug_info_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.strip_debug_info_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/type_manager.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.type_manager.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.type_manager.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/types.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.types.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.types.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/opt/unify_const_pass.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/opt/spirv-tools.unify_const_pass.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/opt/spirv-tools.unify_const_pass.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/parsed_operand.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.parsed_operand.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.parsed_operand.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/print.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.print.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.print.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/software_version.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.software_version.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.software_version.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/spirv_endian.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.spirv_endian.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.spirv_endian.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/spirv_target_env.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.spirv_target_env.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.spirv_target_env.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/spirv_validator_options.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.spirv_validator_options.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.spirv_validator_options.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/table.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.table.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.table.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/text.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.text.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.text.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/text_handler.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.text_handler.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.text_handler.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/util/parse_number.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/util/spirv-tools.parse_number.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/util/spirv-tools.parse_number.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/util/string_utils.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/util/spirv-tools.string_utils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/util/spirv-tools.string_utils.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/val/basic_block.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/val/spirv-tools.basic_block.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/val/spirv-tools.basic_block.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/val/construct.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/val/spirv-tools.construct.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/val/spirv-tools.construct.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/val/function.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/val/spirv-tools.function.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/val/spirv-tools.function.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/val/instruction.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/val/spirv-tools.instruction.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/val/spirv-tools.instruction.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/val/validation_state.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/val/spirv-tools.validation_state.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/val/spirv-tools.validation_state.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate_capability.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate_capability.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate_capability.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate_cfg.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate_cfg.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate_cfg.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate_datarules.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate_datarules.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate_datarules.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate_decorations.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate_decorations.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate_decorations.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate_id.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate_id.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate_id.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate_instruction.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate_instruction.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate_instruction.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate_layout.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate_layout.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate_layout.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/spirv-tools/source/validate_type_unique.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/spirv-tools/source/spirv-tools.validate_type_unique.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/spirv-tools/source/spirv-tools.validate_type_unique.obj</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <Target Name="Build">
+    <Exec Command="call ninja.exe -C $(OutDir) obj/third_party/spirv-tools/spirv-tools.stamp" />
+  </Target>
+  <Target Name="Clean">
+    <Exec Command="call ninja.exe -C $(OutDir) -tclean obj/third_party/spirv-tools/spirv-tools.stamp" />
+  </Target>
+</Project>

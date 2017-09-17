@@ -2457,20 +2457,22 @@
     <ClInclude Include="../../../../../third_party/externals/angle2/src/third_party/systeminfo/SystemInfo.h">
       <Filter>..\..\third_party\externals\angle2\src\third_party\systeminfo</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\libANGLE\Compiler_libANGLE.cpp">
-      <Filter>..\..\third_party\externals\angle2\src\libANGLE</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\libANGLE\Debug_libANGLE.cpp">
-      <Filter>..\..\third_party\externals\angle2\src\libANGLE</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\common\debug_common.cpp">
+    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\common\debug.cpp">
       <Filter>..\..\third_party\externals\angle2\src\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\compiler\translator\Compiler_translator.cpp">
+    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\compiler\translator\Compiler.cpp">
       <Filter>..\..\third_party\externals\angle2\src\compiler\translator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\libANGLE\Compiler.cpp">
+      <Filter>..\..\third_party\externals\angle2\src\libANGLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\externals\angle2\src\libANGLE\Debug.cpp">
+      <Filter>..\..\third_party\externals\angle2\src\libANGLE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="../../../../../third_party/externals/angle2/src/common/angleutils.h" />
+    <ClInclude Include="../../../../../third_party/externals/angle2/src/common/debug.h" />
     <ClInclude Include="../../../../../third_party/externals/angle2/src/common/angleutils.h" />
     <ClInclude Include="../../../../../third_party/externals/angle2/src/common/debug.h" />
   </ItemGroup>

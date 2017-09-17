@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="GN|x64">
+      <Configuration>GN</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{010B7DCA-B9CA-F345-2E62-7F0D8237CBD7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libjpeg</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>../../../../../vs2015/x64_Static_Debug/</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)\$(ProjectName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/Tools/MSVC/14.10.25017/include;C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include;Windows Kits/10/Include/10.0.14393.0/shared;Windows Kits/10/Include/10.0.14393.0/ucrt;Windows Kits/10/Include/10.0.14393.0/um;Windows Kits/10/Include/10.0.14393.0/winrt;C:/Program Files (x86)/Windows Kits/8.1/Include/shared;C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt;C:/Program Files (x86)/Windows Kits/8.1/Include/um;C:/Program Files (x86)/Windows Kits/8.1/Include/winrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/shared;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/ucrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/um;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/winrt;../../../../../third_party/externals/libjpeg-turbo;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\winrt;$(VSInstallDir)\VC\atlmfc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/w /FS /bigobj /utf-8 /GR- /Zi %(AdditionalOptions)</AdditionalOptions>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>TURBO_FOR_WINDOWS;_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jaricom.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jaricom.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jaricom.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcapimin.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcapimin.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcapimin.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcapistd.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcapistd.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcapistd.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcarith.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcarith.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcarith.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jccoefct.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jccoefct.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jccoefct.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jccolor.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jccolor.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jccolor.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcdctmgr.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcdctmgr.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcdctmgr.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jchuff.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jchuff.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jchuff.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcinit.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcinit.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcinit.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcmainct.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcmainct.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcmainct.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcmarker.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcmarker.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcmarker.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcmaster.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcmaster.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcmaster.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcomapi.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcomapi.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcomapi.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcparam.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcparam.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcparam.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcphuff.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcphuff.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcphuff.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcprepct.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcprepct.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcprepct.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jcsample.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jcsample.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jcsample.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdapimin.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdapimin.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdapimin.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdapistd.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdapistd.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdapistd.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdarith.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdarith.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdarith.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdcoefct.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdcoefct.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdcoefct.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdcolor.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdcolor.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdcolor.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jddctmgr.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jddctmgr.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jddctmgr.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdhuff.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdhuff.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdhuff.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdinput.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdinput.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdinput.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdmainct.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdmainct.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdmainct.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdmarker.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdmarker.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdmarker.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdmaster.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdmaster.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdmaster.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdmerge.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdmerge.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdmerge.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdphuff.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdphuff.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdphuff.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdpostct.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdpostct.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdpostct.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jdsample.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jdsample.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jdsample.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jerror.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jerror.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jerror.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jfdctflt.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jfdctflt.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jfdctflt.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jfdctfst.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jfdctfst.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jfdctfst.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jfdctint.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jfdctint.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jfdctint.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jidctflt.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jidctflt.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jidctflt.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jidctfst.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jidctfst.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jidctfst.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jidctint.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jidctint.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jidctint.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jidctred.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jidctred.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jidctred.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jmemmgr.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jmemmgr.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jmemmgr.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jmemnobs.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jmemnobs.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jmemnobs.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jquant1.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jquant1.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jquant1.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jquant2.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jquant2.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jquant2.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jutils.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jutils.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jutils.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../../../third_party/externals/libjpeg-turbo/jsimd_none.c">
+      <Command>call ninja.exe -C $(OutDir) obj/third_party/externals/libjpeg-turbo/libjpeg.jsimd_none.obj</Command>
+      <Outputs>$(OutDir)obj/third_party/externals/libjpeg-turbo/libjpeg.jsimd_none.obj</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <Target Name="Build">
+    <Exec Command="call ninja.exe -C $(OutDir) obj/third_party/libjpeg-turbo/libjpeg.stamp" />
+  </Target>
+  <Target Name="Clean">
+    <Exec Command="call ninja.exe -C $(OutDir) -tclean obj/third_party/libjpeg-turbo/libjpeg.stamp" />
+  </Target>
+</Project>

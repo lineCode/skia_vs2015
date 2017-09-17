@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="GN|x64">
+      <Configuration>GN</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{115FBFAC-2B6E-2F89-C17C-A8D648F2D29B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>effects</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>../../../vs2015/x64_Static_Debug/</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)\$(ProjectName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/Tools/MSVC/14.10.25017/include;C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include;Windows Kits/10/Include/10.0.14393.0/shared;Windows Kits/10/Include/10.0.14393.0/ucrt;Windows Kits/10/Include/10.0.14393.0/um;Windows Kits/10/Include/10.0.14393.0/winrt;C:/Program Files (x86)/Windows Kits/8.1/Include/shared;C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt;C:/Program Files (x86)/Windows Kits/8.1/Include/um;C:/Program Files (x86)/Windows Kits/8.1/Include/winrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/shared;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/ucrt;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/um;C:/Program Files (x86)/Microsoft Visual Studio 14.0/win_sdk/Include/10.0.14393.0/winrt;../../../include/android;../../../include/c;../../../include/codec;../../../include/config;../../../include/core;../../../include/effects;../../../include/encode;../../../include/gpu;../../../include/gpu/gl;../../../include/pathops;../../../include/ports;../../../include/svg;../../../include/utils;../../../include/utils/mac;../../../include/private;../../../src/c;../../../src/codec;../../../src/core;../../../src/effects;../../../src/fonts;../../../src/image;../../../src/images;../../../src/lazy;../../../src/opts;../../../src/pathops;../../../src/pdf;../../../src/ports;../../../src/sfnt;../../../src/shaders;../../../src/shaders/gradients;../../../src/sksl;../../../src/utils;../../../src/utils/win;../../../src/xml;../../../third_party/gif;../../../src/gpu;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\winrt;$(VSInstallDir)\VC\atlmfc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/FS /bigobj /utf-8 /GR- /Zi %(AdditionalOptions)</AdditionalOptions>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;4267;4800;4291;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_HAS_EXCEPTIONS=0;WIN32_LEAN_AND_MEAN;NOMINMAX;SK_GAMMA_APPLY_TO_A8;SK_ANGLE;SK_ENABLE_DISCRETE_GPU;GR_TEST_UTILS=1;SKIA_IMPLEMENTATION=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="../../../src/c/sk_effects.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/c/effects.sk_effects.obj</Command>
+      <Outputs>$(OutDir)obj/src/c/effects.sk_effects.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/GrCircleBlurFragmentProcessor.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.GrCircleBlurFragmentProcessor.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.GrCircleBlurFragmentProcessor.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/effects/GrCircleBlurFragmentProcessor.h" />
+    <CustomBuild Include="../../../src/effects/GrAlphaThresholdFragmentProcessor.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.GrAlphaThresholdFragmentProcessor.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.GrAlphaThresholdFragmentProcessor.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/effects/GrAlphaThresholdFragmentProcessor.h" />
+    <CustomBuild Include="../../../src/effects/Sk1DPathEffect.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.Sk1DPathEffect.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.Sk1DPathEffect.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/Sk2DPathEffect.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.Sk2DPathEffect.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.Sk2DPathEffect.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkAlphaThresholdFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkAlphaThresholdFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkAlphaThresholdFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkArithmeticImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkArithmeticImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkArithmeticImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkBlurMask.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkBlurMask.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkBlurMask.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/effects/SkBlurMask.h" />
+    <CustomBuild Include="../../../src/effects/SkBlurMaskFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkBlurMaskFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkBlurMaskFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkColorFilterImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkColorFilterImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkColorFilterImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkColorMatrix.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkColorMatrix.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkColorMatrix.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkColorMatrixFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkColorMatrixFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkColorMatrixFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkComposeImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkComposeImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkComposeImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkCornerPathEffect.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkCornerPathEffect.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkCornerPathEffect.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkDashPathEffect.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkDashPathEffect.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkDashPathEffect.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkDiscretePathEffect.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkDiscretePathEffect.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkDiscretePathEffect.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkDisplacementMapEffect.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkDisplacementMapEffect.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkDisplacementMapEffect.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkDropShadowImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkDropShadowImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkDropShadowImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkEmbossMask.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkEmbossMask.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkEmbossMask.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/effects/SkEmbossMask.h" />
+    <CustomBuild Include="../../../src/effects/SkEmbossMaskFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkEmbossMaskFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkEmbossMaskFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkImageSource.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkImageSource.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkImageSource.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkHighContrastFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkHighContrastFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkHighContrastFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkLayerDrawLooper.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkLayerDrawLooper.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkLayerDrawLooper.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkLayerRasterizer.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkLayerRasterizer.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkLayerRasterizer.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkLightingImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkLightingImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkLightingImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkLumaColorFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkLumaColorFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkLumaColorFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkMagnifierImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkMagnifierImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkMagnifierImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkMatrixConvolutionImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkMatrixConvolutionImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkMatrixConvolutionImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkMergeImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkMergeImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkMergeImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkMorphologyImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkMorphologyImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkMorphologyImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkOffsetImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkOffsetImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkOffsetImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkOverdrawColorFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkOverdrawColorFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkOverdrawColorFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkPackBits.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkPackBits.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkPackBits.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/effects/SkPackBits.h" />
+    <CustomBuild Include="../../../src/effects/SkPaintFlagsDrawFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkPaintFlagsDrawFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkPaintFlagsDrawFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkPaintImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkPaintImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkPaintImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkPictureImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkPictureImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkPictureImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkRRectsGaussianEdgeMaskFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkRRectsGaussianEdgeMaskFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkRRectsGaussianEdgeMaskFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkTableColorFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkTableColorFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkTableColorFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkTableMaskFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkTableMaskFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkTableMaskFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkTileImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkTileImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkTileImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkToSRGBColorFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkToSRGBColorFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkToSRGBColorFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/effects/SkXfermodeImageFilter.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/effects/effects.SkXfermodeImageFilter.obj</Command>
+      <Outputs>$(OutDir)obj/src/effects/effects.SkXfermodeImageFilter.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/shaders/SkPerlinNoiseShader.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/effects.SkPerlinNoiseShader.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/effects.SkPerlinNoiseShader.obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="../../../src/shaders/gradients/Sk4fGradientBase.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.Sk4fGradientBase.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.Sk4fGradientBase.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/Sk4fGradientBase.h" />
+    <None Include="../../../src/shaders/gradients/Sk4fGradientPriv.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/Sk4fLinearGradient.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.Sk4fLinearGradient.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.Sk4fLinearGradient.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/Sk4fLinearGradient.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/SkClampRange.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.SkClampRange.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.SkClampRange.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/SkClampRange.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/SkGradientBitmapCache.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.SkGradientBitmapCache.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.SkGradientBitmapCache.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/SkGradientBitmapCache.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/SkGradientShader.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.SkGradientShader.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.SkGradientShader.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/SkGradientShaderPriv.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/SkLinearGradient.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.SkLinearGradient.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.SkLinearGradient.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/SkLinearGradient.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/SkRadialGradient.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.SkRadialGradient.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.SkRadialGradient.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/SkRadialGradient.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/SkTwoPointConicalGradient.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.SkTwoPointConicalGradient.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.SkTwoPointConicalGradient.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/SkTwoPointConicalGradient.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/SkTwoPointConicalGradient_gpu.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.SkTwoPointConicalGradient_gpu.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.SkTwoPointConicalGradient_gpu.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/SkTwoPointConicalGradient_gpu.h" />
+    <CustomBuild Include="../../../src/shaders/gradients/SkSweepGradient.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/shaders/gradients/effects.SkSweepGradient.obj</Command>
+      <Outputs>$(OutDir)obj/src/shaders/gradients/effects.SkSweepGradient.obj</Outputs>
+    </CustomBuild>
+    <None Include="../../../src/shaders/gradients/SkSweepGradient.h" />
+    <None Include="../../../include/effects/Sk1DPathEffect.h" />
+    <None Include="../../../include/effects/Sk2DPathEffect.h" />
+    <None Include="../../../include/effects/SkAlphaThresholdFilter.h" />
+    <None Include="../../../include/effects/SkArithmeticImageFilter.h" />
+    <None Include="../../../include/effects/SkBlurDrawLooper.h" />
+    <None Include="../../../include/effects/SkBlurImageFilter.h" />
+    <None Include="../../../include/effects/SkBlurMaskFilter.h" />
+    <None Include="../../../include/effects/SkColorFilterImageFilter.h" />
+    <None Include="../../../include/effects/SkColorMatrix.h" />
+    <None Include="../../../include/effects/SkColorMatrixFilter.h" />
+    <None Include="../../../include/effects/SkCornerPathEffect.h" />
+    <None Include="../../../include/effects/SkDashPathEffect.h" />
+    <None Include="../../../include/effects/SkDiscretePathEffect.h" />
+    <None Include="../../../include/effects/SkDisplacementMapEffect.h" />
+    <None Include="../../../include/effects/SkDropShadowImageFilter.h" />
+    <None Include="../../../include/effects/SkGradientShader.h" />
+    <None Include="../../../include/effects/SkImageSource.h" />
+    <None Include="../../../include/effects/SkLayerDrawLooper.h" />
+    <None Include="../../../include/effects/SkLayerRasterizer.h" />
+    <None Include="../../../include/effects/SkLightingImageFilter.h" />
+    <None Include="../../../include/effects/SkLumaColorFilter.h" />
+    <None Include="../../../include/effects/SkMagnifierImageFilter.h" />
+    <None Include="../../../include/effects/SkMorphologyImageFilter.h" />
+    <None Include="../../../include/effects/SkOffsetImageFilter.h" />
+    <None Include="../../../include/effects/SkOverdrawColorFilter.h" />
+    <None Include="../../../include/effects/SkPaintFlagsDrawFilter.h" />
+    <None Include="../../../include/effects/SkPaintImageFilter.h" />
+    <None Include="../../../include/effects/SkPerlinNoiseShader.h" />
+    <None Include="../../../include/effects/SkRRectsGaussianEdgeMaskFilter.h" />
+    <None Include="../../../include/effects/SkTableColorFilter.h" />
+    <None Include="../../../include/effects/SkTableMaskFilter.h" />
+    <None Include="../../../include/effects/SkTileImageFilter.h" />
+    <None Include="../../../include/effects/SkToSRGBColorFilter.h" />
+    <None Include="../../../include/effects/SkXfermodeImageFilter.h" />
+    <CustomBuild Include="../../../src/ports/SkGlobalInitialization_default.cpp">
+      <Command>call ninja.exe -C $(OutDir) obj/src/ports/effects.SkGlobalInitialization_default.obj</Command>
+      <Outputs>$(OutDir)obj/src/ports/effects.SkGlobalInitialization_default.obj</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <Target Name="Build">
+    <Exec Command="call ninja.exe -C $(OutDir) obj/effects.stamp" />
+  </Target>
+  <Target Name="Clean">
+    <Exec Command="call ninja.exe -C $(OutDir) -tclean obj/effects.stamp" />
+  </Target>
+</Project>

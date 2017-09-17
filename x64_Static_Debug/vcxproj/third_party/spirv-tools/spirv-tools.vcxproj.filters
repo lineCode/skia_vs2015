@@ -129,13 +129,13 @@
     <ClCompile Include="../../../../../third_party/externals/spirv-tools/source/validate_type_unique.cpp">
       <Filter>..\..\third_party\externals\spirv-tools\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\basic_block_val.cpp">
+    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\basic_block.cpp">
       <Filter>..\..\third_party\externals\spirv-tools\source\val</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\function_val.cpp">
+    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\function.cpp">
       <Filter>..\..\third_party\externals\spirv-tools\source\val</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\instruction_val.cpp">
+    <ClCompile Include="..\..\..\..\..\third_party\externals\spirv-tools\source\val\instruction.cpp">
       <Filter>..\..\third_party\externals\spirv-tools\source\val</Filter>
     </ClCompile>
   </ItemGroup>
